@@ -169,6 +169,13 @@ h6 {
   margin: 0 0 10px 0;
 }
 
+@media (max-width: 768px) {
+  .hero .social-links {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .header .social-links a {
   font-size: 16px;
   display: inline-flex;
@@ -2725,4 +2732,10 @@ section,
 
 .skill-icon:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .swiper-wrapper {
+    display: flex !important;
+  }
 }
