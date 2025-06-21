@@ -1567,6 +1567,13 @@ section,
   color: var(--accent-color);
 }
 
+.about .about-section .about-item a {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  color: rgb(224, 144, 47);
+}
+
 .about .about-section .about-item .company {
   font-size: 0.95rem;
   margin-bottom: 1rem;
@@ -2714,3 +2721,5 @@ section,
 .skill-icon:hover {
   transform: scale(1.1);
 }
+
+
