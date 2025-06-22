@@ -254,4 +254,18 @@
     },
     slidesPerView: 1,
   });
+
+    function smoothScroll(event) {
+    event.preventDefault();
+    const targetId = event.currentTarget.getAttribute("href").substring(1); // ambil id tanpa #
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+
+      // Hapus hash dari URL
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+  }
+  
 })();
