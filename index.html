@@ -1,918 +1,726 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Informatic Student Portfolio</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-
-    <!-- Favicons -->
-    <link href="" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
-    <!-- Vendor CSS Files -->
+    <link rel="icon" href="" type="" />
+    <title>Web Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/vendors/linericon/style.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
     <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
       rel="stylesheet"
+      href="assets/vendors/owl-carousel/owl.carousel.min.css"
     />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
     <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
+      href="assets/vendors/nice-select/css/nice-select.css"
     />
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-
-    <!-- Main CSS File -->
-    <link href="assets/css/main.css" rel="stylesheet" />
-
-    <!-- =======================================================
-  * Template Name: Portofolio
-  * Template URL: https://bootstrapmade.com/snapfolio-bootstrap-portfolio-template/
-  * Updated: Jun 13 2025 with Bootstrap v5.3.6
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
-  <body class="index-page">
-    <header
-      id="header"
-      class="header dark-background d-flex flex-column justify-content-center"
-    >
-      <i class="header-toggle d-xl-none bi bi-list"></i>
-
-      <div class="header-container d-flex flex-column align-items-start">
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li>
-              <a href="#hero" onclick="smoothScroll(event)" class="active"
-                ><i class="bi bi-house navicon"></i>Home</a
-              >
-            </li>
-            <li>
-              <a href="#skills" onclick="smoothScroll(event)"
-                ><i class="bi bi-person navicon"></i> Skills</a
-              >
-            </li>
-            <li>
-              <a href="#about" onclick="smoothScroll(event)"
-                ><i class="bi bi-file-earmark-text navicon"></i> About</a
-              >
-            </li>
-            <li>
-              <a href="#portfolio" onclick="smoothScroll(event)"
-                ><i class="bi bi-images navicon"></i> Portfolio</a
-              >
-            </li>
-            <li>
-              <a href="#contact" onclick="smoothScroll(event)"
-                ><i class="bi bi-envelope navicon"></i> Contact</a
-              >
-            </li>
-          </ul>
+  <body>
+    <!--================ Start Header Area =================-->
+    <header class="header_area">
+      <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="index.html"
+              ><h2>PORTOFOLIO</h2></a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div
+              class="collapse navbar-collapse offset"
+              id="navbarSupportedContent"
+            >
+              <ul class="nav navbar-nav menu_nav justify-content-end">
+                <li class="nav-item">
+                  <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#portofolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </nav>
-
-        <div class="social-links text-center">
-          <a href="https://x.com/BayuTriPrayitn1" class="twitter"
-            ><i class="bi bi-twitter-x"></i
-          ></a>
-          <a
-            href="https://www.instagram.com/triprytn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            class="instagram"
-            ><i class="bi bi-instagram"></i
-          ></a>
-          <a href="https://github.com/bayu3prayitno" class="github"
-            ><i class="bi bi-github"></i
-          ></a>
-          <a
-            href="https://linkedin.com/in/bayu-tri-prayitno-80bba5277"
-            class="linkedin"
-            ><i class="bi bi-linkedin"></i
-          ></a>
-        </div>
       </div>
     </header>
+    <!--================ End Header Area =================-->
 
-    <main class="main">
-      <!-- Hero Section -->
-      <section id="hero" class="hero section">
-        <div class="background-elements">
-          <div class="bg-circle circle-1"></div>
-          <div class="bg-circle circle-2"></div>
-        </div>
-
-        <div class="hero-content">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                <div class="hero-text">
-                  <h1>Porto<span class="accent-text">Folio</span></h1>
-                  <h2>Bayu Tri Prayitno</h2>
-                  <p class="lead">
-                    I'm a
-                    <span
-                      class="typed"
-                      data-typed-items="Bayu, Tech Enthusiast, IT Professional in Training"
-                    ></span>
-                  </p>
-                  <p class="description">
-                    Active student at Semarang State Polytechnic, Electrical
-                    Engineering Department, Computer Engineering Technology
-                    Study Program. I am a person who upholds discipline, has a
-                    high spirit of learning, and is open to the latest
-                    technological developments. My commitment is to continue to
-                    develop, adapt quickly, and be ready to contribute
-                    positively in a dynamic work environment.
-                  </p>
-
-                  <div class="hero-actions">
-                    <a href="#portfolio" class="btn btn-primary"
-                      >View My Project</a
-                    >
-                    <a href="#about" class="btn btn-outline">about me</a>
-                  </div>
-
-                  <div class="social-links">
-                    <a
-                      href="https://www.instagram.com/triprytn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                      ><i class="bi bi-instagram"></i
-                    ></a>
-                    <a href="https://github.com/bayu3prayitno"
-                      ><i class="bi bi-github"></i
-                    ></a>
-                    <a
-                      href="https://linkedin.com/in/bayu-tri-prayitno-80bba5277"
-                      ><i class="bi bi-linkedin"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-                <div class="hero-visual">
-                  <div class="profile-container">
-                    <div class="profile-background"></div>
-                    <div class="hero-visual swiper myProfileSwiper">
-                      <div class="profile-container swiper-wrapper">
-                        <div class="swiper-slide">
-                          <img
-                            src="assets/img/profile/bayu.jpg"
-                            alt="Alexander Chen"
-                            class="profile-image"
-                          />
-                        </div>
-                        <div class="swiper-slide">
-                          <img
-                            src="assets/img/profile/bayu-2.jpg"
-                            alt="Alexander Chen"
-                            class="profile-image"
-                          />
-                        </div>
-                        <div class="swiper-slide">
-                          <img
-                            src="assets/img/profile/bayu-3.jpg"
-                            alt="Alexander Chen"
-                            class="profile-image"
-                          />
-                        </div>
-                        <div class="swiper-slide">
-                          <img
-                            src="assets/img/profile/bayu-4.jpg"
-                            alt="Alexander Chen"
-                            class="profile-image"
-                          />
-                        </div>
-                        <div class="swiper-slide">
-                          <img
-                            src="assets/img/profile/bayu-5.jpg"
-                            alt="Alexander Chen"
-                            class="profile-image"
-                          />
-                        </div>
-                      </div>
-
-                      <!-- Optional nav (bisa dihapus jika tidak dibutuhkan) -->
-                      <div class="swiper-pagination"></div>
-                    </div>
-
-                    <!-- Floating elements tetap di luar swiper -->
-                    <div class="floating-elements">
-                      <div class="floating-icon icon-1">
-                        <i class="bi bi-palette"></i>
-                      </div>
-                      <div class="floating-icon icon-2">
-                        <i class="bi bi-code-slash"></i>
-                      </div>
-                      <div class="floating-icon icon-3">
-                        <i class="bi bi-lightbulb"></i>
-                      </div>
-                      <div class="floating-icon icon-4">
-                        <i class="bi bi-graph-up"></i>
-                      </div>
-                    </div>
-                    <div class="floating-elements">
-                      <div class="floating-icon icon-1">
-                        <i class="bi bi-palette"></i>
-                      </div>
-                      <div class="floating-icon icon-2">
-                        <i class="bi bi-code-slash"></i>
-                      </div>
-                      <div class="floating-icon icon-3">
-                        <i class="bi bi-lightbulb"></i>
-                      </div>
-                      <div class="floating-icon icon-4">
-                        <i class="bi bi-graph-up"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /Hero Section -->
-
-      <section id="skills" class="skills section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Skills</h2>
-          <p>Tools & Technologies</p>
-        </div>
-        <!-- End Section Title -->
-        <div class="skills-container">
-          <div class="skill-icon">
-            <img src="assets/img/skill/html5.png" alt="HTML5" />
-          </div>
-          <div class="skill-icon">
-            <img src="assets/img/skill/css3.png" alt="CSS3" />
-          </div>
-          <div class="skill-icon">
-            <img src="assets/img/skill/javascript.png" alt="JavaScript" />
-          </div>
-          <div class="skill-icon">
-            <img src="assets/img/skill/vscode.png" alt="vscode" />
-          </div>
-          <div class="skill-icon">
-            <img src="assets/img/skill/flutter.png" alt="flutter" />
-          </div>
-          <div class="skill-icon">
-            <img src="assets/img/skill/git.png" alt="Git" />
-          </div>
-          <div class="skill-icon">
-            <img src="assets/img/skill/sql.png" alt="Database" />
-          </div>
-          <div class="skill-icon">
-            <img src="assets/img/skill/python.png" alt="Python" />
-          </div>
-        </div>
-      </section>
-      <!-- Stats Section -->
-      <section id="stats" class="stats section light-background">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <div class="stats-wrapper">
-                <div class="stats-item" data-aos="zoom-in" data-aos-delay="150">
-                  <div class="icon-wrapper">
-                    <i class="bi bi-emoji-smile"></i>
-                  </div>
-                  <span
-                    data-purecounter-start="222"
-                    data-purecounter-end="0"
-                    data-purecounter-duration="1"
-                    class="purecounter"
-                  ></span>
-                  <p>Happy Clients</p>
-                </div>
-                <!-- End Stats Item -->
-
-                <div class="stats-item" data-aos="zoom-in" data-aos-delay="200">
-                  <div class="icon-wrapper">
-                    <i class="bi bi-journal-richtext"></i>
-                  </div>
-                  <span
-                    data-purecounter-start="500"
-                    data-purecounter-end="3"
-                    data-purecounter-duration="1"
-                    class="purecounter"
-                  ></span>
-                  <p>Projects</p>
-                </div>
-                <!-- End Stats Item -->
-
-                <div class="stats-item" data-aos="zoom-in" data-aos-delay="250">
-                  <div class="icon-wrapper">
-                    <i class="bi bi-headset"></i>
-                  </div>
-                  <span
-                    data-purecounter-start="0"
-                    data-purecounter-end="80"
-                    data-purecounter-duration="1"
-                    class="purecounter"
-                  ></span>
-                  <p>Komunikasi</p>
-                </div>
-                <!-- End Stats Item -->
-
-                <div class="stats-item" data-aos="zoom-in" data-aos-delay="300">
-                  <div class="icon-wrapper">
-                    <i class="bi bi-people"></i>
-                  </div>
-                  <span
-                    data-purecounter-start="0"
-                    data-purecounter-end="85"
-                    data-purecounter-duration="1"
-                    class="purecounter"
-                  ></span>
-                  <p>Hard Workers</p>
-                </div>
-                <!-- End Stats Item -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /Stats Section -->
-
-      <!-- about Section -->
-      <section id="about" class="about section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Tentang Saya</h2>
-          <p>
-            Berikut profil singkat mengenai diri saya. Terkait dengan kemampuan,
-            Pengalaman, dan Pendidikan saya.
-          </p>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4">
-            <!-- Left column with summary and contact -->
-            <div class="col-lg-4">
-              <div
-                class="about-side"
-                data-aos="fade-right"
-                data-aos-delay="100"
-              >
-                <div class="profile-img mb-4">
-                  <img
-                    src="assets/img/profile/bayu-1.jpg"
-                    alt="Profile"
-                    class="img-fluid rounded"
-                  />
-                </div>
-
-                <h3>Profil Singkat</h3>
-                <p>
-                  Saya adalah mahasiswa yang sedang menempuh pendidikan di
-                  bidang teknologi rekayasa komputer dan memiliki minat luas
-                  dalam berbagai sektor IT seperti Software Developer,
-                  Networking, Embedded System, serta teknologi terbaru berbasis
-                  IoT dan AI.
-                </p>
-
-                <h3 class="mt-4">Kontak</h3>
-                <ul class="contact-info list-unstyled">
-                  <li>
-                    <i class="bi bi-geo-alt"></i> Ds. Tagung, Kec Kandeman, Kab
-                    Batang, Jawa Tengah
-                  </li>
-                  <li>
-                    <i class="bi bi-envelope"></i> treeprayitno12@gmail.com
-                  </li>
-                  <li><i class="bi bi-phone"></i> +62 857-2504-0030</li>
-                  <li>
-                    <i class="bi bi-linkedin"></i>
-                    linkedin.com/in/bayu-tri-prayitno
-                  </li>
-                </ul>
-
-                <div class="skills-animation mt-4">
-                  <h3>Kemampuan</h3>
-                  <div class="skill-item">
-                    <div class="d-flex justify-content-between">
-                      <span>Problem Solving</span>
-                      <span>90%</span>
-                    </div>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-valuenow="90"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-
-                  <div class="skill-item">
-                    <div class="d-flex justify-content-between">
-                      <span>Berbahasa</span>
-                      <span>75%</span>
-                    </div>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-valuenow="75"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-
-                  <div class="skill-item">
-                    <div class="d-flex justify-content-between">
-                      <span>Menejemen Projek</span>
-                      <span>70%</span>
-                    </div>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-valuenow="70"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-
-                  <div class="skill-item">
-                    <div class="d-flex justify-content-between">
-                      <span>Programming</span>
-                      <span>80%</span>
-                    </div>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-valuenow="80"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="cta-section">
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-primary dropdown-toggle"
-                      type="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <i class="bi bi-download"></i> Download CV
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="assets/doc/CV_ats.pdf"
-                          target="_blank"
-                          >CV ATS</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="assets/doc/cv.pdf"
-                          target="_blank"
-                          >CV Kreatif</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right column with experience and education -->
-            <div class="col-lg-8 ps-4 ps-lg-5">
-              <!-- Experience Section -->
-              <div class="about-section" data-aos="fade-up">
-                <h3><i class="bi bi-briefcase me-2"></i>Pengalaman</h3>
-
-                <div class="about-item">
-                  <h4>Volunteer FKBSE</h4>
-                  <i class="bagian">Pendamping Peserta</i>
-                  <h5>2023</h5>
-                  <p class="company">
-                    <i class="bi bi-building"></i> Himpunan Mahasiswa Elektro
-                  </p>
-                  <ul>
-                    <li>Mendampingi peserta selama kegiatan berlangsung</li>
-                    <li>Memberikan informasi dan pengarahan kepada peserta</li>
-                    <li>
-                      Mendampingi peserta selama sesi atau aktivitas tertentu
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="about-item">
-                  <h4>Volunteer TECHCOMFEST</h4>
-                  <i class="bagian">Sie Publikasi, Dokumentasi, dan Dekorasi</i>
-                  <h5>2025</h5>
-                  <p class="company">
-                    <i class="bi bi-building"></i> UKM Polytechnic Computer Club
-                  </p>
-                  <ul>
-                    <li>Mendesain layout lomba CTF.</li>
-                    <li>Mendesain layout Seminar Nasional.</li>
-                    <li>Melakukan Dokumentasi selama acara berlangsung</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Education Section -->
-              <div
-                class="about-section"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <h3><i class="bi bi-mortarboard me-2"></i>Pendidikan</h3>
-
-                <div class="about-item">
-                  <h4>Politeknik Negeri Semarang</h4>
-                  <h5>2022 - Sekarang</h5>
-                  <p class="company">
-                    <i class="bi bi-building"></i> Perguruan Tinggi
-                  </p>
-                  <p>D4-Teknologi Rekayasa Komputer</p>
-                </div>
-
-                <div class="about-item">
-                  <h4>SMK Negeri 1 Batang</h4>
-                  <h5>2019 - 2022</h5>
-                  <p class="company"><i class="bi bi-building"></i> SMK</p>
-                  <p>Jurusan Teknik Komputer dan Jaringan</p>
-                </div>
-              </div>
-
-              <!-- Certifications Section -->
-              <div
-                class="about-section"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <h3><i class="bi bi-award me-2"></i>Sertifikasi</h3>
-
-                <div class="about-item">
-                  <h4>Database Design Leaner</h4>
-                  <p class="penerbit">
-                    <i class="bi bi-journal-richtext"></i> Oracle Academy
-                  </p>
-                  <h5>18 Mei 2023</h5>
-                  <a href="assets/doc/DD.pdf">sertifikat</a>
-                </div>
-
-                <div class="about-item">
-                  <h4>Database Programming with SQL Learning</h4>
-                  <p class="penerbit">
-                    <i class="bi bi-journal-richtext"></i> Oracle Academy
-                  </p>
-                  <h5>19 Juli 2023</h5>
-                  <a href="assets/doc/clmsCertificate.pdf">sertifikat</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /about Section -->
-
-      <!-- Portfolio Section -->
-      <section id="portfolio" class="portfolio section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Portfolio</h2>
-          <p>
-            Berikut adalah kumpulan proyek yang telah saya kerjakan. Setiap
-            proyek mencerminkan ketertarikan dan dedikasi saya terhadap
-            pengembangan teknologi, kreativitas, serta kontribusi nyata dalam
-            berbagai bidang.
-          </p>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div
-            class="isotope-layout"
-            data-default-filter="*"
-            data-layout="masonry"
-            data-sort="original-order"
-          >
-            <div class="row">
-              <div class="col-lg-3 filter-sidebar">
-                <div
-                  class="filters-wrapper"
-                  data-aos="fade-right"
-                  data-aos-delay="150"
-                >
-                  <ul class="portfolio-filters isotope-filters">
-                    <li data-filter="*" class="filter-active">All Projects</li>
-                    <li data-filter=".filter-mobile">Aplikasi Mobile</li>
-                    <li data-filter=".filter-website">Website</li>
-                    <li data-filter=".filter-ilmiah">Karya Ilmiah</li>
-                    <li data-filter=".filter-nature">Nature</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-9">
-                <div
-                  class="row gy-4 portfolio-container isotope-container"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <div
-                    class="col-lg-6 col-md-6 portfolio-item isotope-item filter-mobile"
-                  >
-                    <div class="portfolio-wrap">
-                      <img
-                        src="assets/img/portfolio/port_mobile/logo.png"
-                        class="img-fluid"
-                        alt="Portfolio Image"
-                        loading="lazy"
-                      />
-                      <div class="portfolio-info">
-                        <div class="content">
-                          <span class="category">Mobile App</span>
-                          <h4>YUK FUTSAL</h4>
-                          <div class="portfolio-links">
-                            <a
-                              href="assets/img/portfolio/portfolio-portrait-1.webp"
-                              class="glightbox"
-                              title="Capturing Moments"
-                              ><i class="bi bi-plus-lg"></i
-                            ></a>
-                            <a
-                              href="error.html"
-                              onclick="smoothScroll(event)"
-                              title="More Details"
-                              ><i class="bi bi-arrow-right"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <div
-                    class="col-lg-6 col-md-6 portfolio-item isotope-item filter-website"
-                  >
-                    <div class="portfolio-wrap">
-                      <img
-                        src="assets/img/portfolio/port_pbl/1.png"
-                        class="img-fluid"
-                        alt="Portfolio Image"
-                        loading="lazy"
-                      />
-                      <div class="portfolio-info">
-                        <div class="content">
-                          <span class="category">Website</span>
-                          <h4>Test Psikologi</h4>
-                          <div class="portfolio-links">
-                            <a
-                              href="assets/img/portfolio/port_pbl/5.png"
-                              class="glightbox"
-                              title="Classic Beauty"
-                              ><i class="bi bi-plus-lg"></i
-                            ></a>
-                            <a
-                              href="error.html"
-                              onclick="smoothScroll(event)"
-                              title="More Details"
-                              ><i class="bi bi-arrow-right"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-
-                  <div
-                    class="col-lg-6 col-md-6 portfolio-item isotope-item filter-ilmiah"
-                  >
-                    <div class="portfolio-wrap">
-                      <img
-                        src="assets/img/portfolio/port_ilmiah/cover.jpg"
-                        class="img-fluid"
-                        alt="Portfolio Image"
-                        loading="lazy"
-                      />
-                      <div class="portfolio-info">
-                        <div class="content">
-                          <span class="category">Karya Ilmiah</span>
-                          <h4>
-                            PENGEMBANGAN SISTEM MONITORING KUALITAS UDARA
-                            RUANGAN BERBASIS IOT MENGGUNAKAN SENSOR MQ135 DAN
-                            DHT11
-                          </h4>
-                          <div class="portfolio-links">
-                            <a
-                              href="assets/img/portfolio/portfolio-2.webp"
-                              class="glightbox"
-                              title="Woodcraft Design"
-                              ><i class="bi bi-plus-lg"></i
-                            ></a>
-                            <a
-                              href="error.html"
-                              onclick="smoothScroll(event)"
-                              title="More Details"
-                              ><i class="bi bi-arrow-right"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Portfolio Item -->
-                </div>
-                <!-- End Portfolio Container -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /Portfolio Section -->
-
-      <!-- Contact Section -->
-      <section id="contact" class="contact section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-        </div>
-        <!-- End Section Title -->
-
+    <!--================ Start Home Banner Area =================-->
+    <section id="home" class="home_banner_area">
+      <div class="banner_inner">
         <div class="container">
-          <div class="row g-4 g-lg-5">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="banner_content">
+                <h3 class="text-uppercase">Hello</h3>
+                <h1 class="text-uppercase">I am Bayu</h1>
+                <h5 class="text-uppercase">
+                  <span
+                    class="typed"
+                    data-typed-items="POLINES students, Tech Enthusiast, IT Professional in Training"
+                  ></span>
+                </h5>
+                <div class="d-flex align-items-center">
+                  <a class="primary_btn" href="#"><span>Hire Me</span></a>
+                </div>
+              </div>
+            </div>
             <div class="col-lg-5">
-              <div class="info-box">
-                <h3>Contact Info</h3>
+              <div class="home_right_img">
+                <img src="assets/img/banner/home-right.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <div class="info-item">
-                  <div class="icon-box">
-                    <i class="bi bi-geo-alt"></i>
-                  </div>
-                  <div class="content">
-                    <h4>Our Location</h4>
-                    <p>Tembalang, Kota Semarang</p>
-                    <p>Jawa Tengah, 50277</p>
+    <!--================ End Home Banner Area =================-->
+
+    <!--================ Start About Us Area =================-->
+    <section id="about" class="about_area section_gap">
+      <div class="container">
+        <div class="row justify-content-start align-items-center">
+          <div class="col-lg-5">
+            <div class="about_img">
+              <img class="" src="assets/img/about-us.png" alt="" />
+            </div>
+          </div>
+
+          <div class="offset-lg-1 col-lg-5">
+            <div class="main_title text-left">
+              <h2>
+                let’s <br />
+                Introduce about <br />
+                myself
+              </h2>
+              <p>
+                I am a student currently pursuing a degree in Computer
+                Engineering Technology. My studies have provided me with a solid
+                foundation in both hardware and software aspects of computing,
+                enabling me to explore various areas of the IT field.
+              </p>
+              <p>
+                I have a broad interest in several sectors, including Software
+                Development, Networking, and Embedded Systems. I am also
+                enthusiastic about the latest advancements in IoT and AI-based
+                technologies, and I am eager to apply my knowledge to real-world
+                challenges and innovative projects.
+              </p>
+              <div class="dropdown">
+                <button
+                  class="primary_btn dropdown-toggle"
+                  type="button"
+                  data-toggle="dropdown"
+                >
+                  Download CV
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="assets/doc/CV_ats.pdf" download
+                    >CV ATS</a
+                  >
+                  <a class="dropdown-item" href="assets/doc/cv.pdf" download
+                    >CV Umum</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End About Us Area =================-->
+
+    <!--================ Srart Brand Area =================-->
+    <section id="skills" class="brand_area section_gap_bottom">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <div class="main_title">
+              <h2>SKILLS</h2>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/vscode.png" alt="" />
                   </div>
                 </div>
-
-                <div class="info-item">
-                  <div class="icon-box">
-                    <i class="bi bi-telephone"></i>
-                  </div>
-                  <div class="content">
-                    <h4>Phone Number</h4>
-                    <p>+1 5589 55488 55</p>
-                    <p>+1 6678 254445 41</p>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/laravel.png" alt="" />
                   </div>
                 </div>
-
-                <div class="info-item">
-                  <div class="icon-box">
-                    <i class="bi bi-envelope"></i>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/git.png" alt="" />
                   </div>
-                  <div class="content">
-                    <h4>Email Address</h4>
-                    <p>treeprayitno12@gmail.com</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/html.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/php.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/css.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/js.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/python.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/wp.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/sql.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/cisco.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-brand-item d-table">
+                  <div class="d-table-cell text-center">
+                    <img src="assets/img/tools/Firebase.png" alt="" />
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="offset-lg-2 col-lg-4 col-md-6">
+            <div class="client-info">
+              <div class="d-flex mb-50">
+                <span class="lage">Software & Tools</span>
+              </div>
+              <p>
+                Other software and tools I am currently learning include Figma,
+                C#, C++, MySQL, Oracle, MQTT, Microsoft Office, and Unity. All
+                of these are still in the learning phase.
+              </p>
+              <div class="call-now d-flex"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <div class="title">
+              <h2>Hard Skills</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row feature_inner">
+          <div class="col-lg-3 col-md-6">
+            <div class="feature_item">
+              <img src="assets/img/services/s1.png" alt="" />
+              <h4>Wp developing</h4>
+              <p>
+                Creeping for female light years that lesser can't evening heaven
+                isn't bearing tree
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="feature_item">
+              <img src="assets/img/services/s2.png" alt="" />
+              <h4>UI/ux design</h4>
+              <p>
+                Creeping for female light years that lesser can't evening heaven
+                isn't bearing tree
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="feature_item">
+              <img src="assets/img/services/s3.png" alt="" />
+              <h4>Web design</h4>
+              <p>
+                Creeping for female light years that lesser can't evening heaven
+                isn't bearing tree
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="feature_item">
+              <img src="assets/img/services/s4.png" alt="" />
+              <h4>seo optimize</h4>
+              <p>
+                Creeping for female light years that lesser can't evening heaven
+                isn't bearing tree
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Brand Area =================-->
 
-            <div class="col-lg-7">
-              <div class="contact-form">
-                <h3>Get In Touch</h3>
-                <form
-                  action="forms/contact.php"
-                  method="post"
-                  class="php-email-form"
-                >
-                  <div class="row gy-4">
-                    <div class="col-md-6">
-                      <input
-                        type="text"
-                        name="name"
-                        class="form-control"
-                        placeholder="Your Name"
-                        required=""
-                      />
-                    </div>
+    <!--================Start Portfolio Area =================-->
+    <section id="portofolio" class="portfolio_area">
+      <div class="main_title">
+        <h2>PROJECT</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-12"></div>
+      </div>
+      <div class="filters portfolio-filter">
+        <ul>
+          <li class="active" data-filter="*">all</li>
+          <li data-filter="filter-web">Website</li>
+          <li data-filter="filter-mobile">Mobile</li>
+          <li data-filter="filter-game">Game</li>
+          <li data-filter="filter-ki">Karya Ilmiah</li>
+        </ul>
+      </div>
+      <div class="filters-content">
+        <div class="row portfolio-grid justify-content-center">
+          <div class="projects-container">
+            <div class="project-card filter-web">
+              <img
+                src="assets/img/portfolio/port_pbl/5.png"
+                alt="Data Visualization Dashboard"
+              />
+              <div class="project-content">
+                <h3>Psikotes Online (2024)</h3>
+                <p>
+                  Contributed to the development of dynamic, well-structured,
+                  and responsive web pages using HTML, CSS, and JavaScript.
+                </p>
+                <div class="tech-tags">
+                  <span class="tag green">Website</span>
+                </div>
+                <a href="#" class="view-link">View Project →</a>
+              </div>
+            </div>
+            <div class="project-card filter-mobile">
+              <img
+                src="assets/img/portfolio/port_mobile/logo.png"
+                alt="Data Visualization Dashboard"
+              />
+              <div class="project-content">
+                <h3>Futsal field booking system (2023)</h3>
+                <p>
+                  Designed and developed applications using Flutter, integrated
+                  with Firebase as the backend database.
+                </p>
+                <div class="tech-tags">
+                  <span class="tag red">Mobile</span>
+                </div>
+                <a href="#" class="view-link">View Project →</a>
+              </div>
+            </div>
+            <div class="project-card filter-mobile">
+              <img
+                src="assets/img/portfolio/port_mobile/solar-system.jpg"
+                alt="Data Visualization Dashboard"
+              />
+              <div class="project-content">
+                <h3>Solar System AR Aplication (2024)</h3>
+                <p>
+                  An AR-based educational app that offers an immersive and
+                  interactive way to learn about the solar system.
+                </p>
+                <div class="tech-tags">
+                  <span class="tag red">Mobile</span>
+                </div>
+                <a href="#" class="view-link">View Project →</a>
+              </div>
+            </div>
+            <div class="project-card filter-game">
+              <img
+                src="assets/img/portfolio/port_mobile/cedric.png"
+                alt="Data Visualization Dashboard"
+              />
+              <div class="project-content">
+                <h3>“Pangeran Cedric” (2023)</h3>
+                <p>
+                  A PC game that blends elements of adventure and puzzle-solving
+                  to create an engaging gameplay experience.
+                </p>
+                <div class="tech-tags">
+                  <span class="tag blue">Game</span>
+                </div>
+                <a href="#" class="view-link">View Project →</a>
+              </div>
+            </div>
+            <div class="project-card filter-ki">
+              <img
+                src="assets/img/portfolio/port_ilmiah/cover.jpg"
+                alt="Data Visualization Dashboard"
+              />
+              <div class="project-content">
+                <h3>Karya Ilmiah (2024)</h3>
+                <p>
+                  Development of an IoT-Based Indoor Air Quality Monitoring
+                  System Using MQ135 and DHT11 Sensors.
+                </p>
+                <div class="tech-tags">
+                  <span class="tag purple">Karya Ilmiah</span>
+                </div>
+                <a href="#" class="view-link">View Project →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Portfolio Area =================-->
 
-                    <div class="col-md-6">
-                      <input
-                        type="email"
-                        class="form-control"
-                        name="email"
-                        placeholder="Your Email"
-                        required=""
-                      />
-                    </div>
-
-                    <div class="col-12">
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="subject"
-                        placeholder="Subject"
-                        required=""
-                      />
-                    </div>
-
-                    <div class="col-12">
-                      <textarea
-                        class="form-control"
-                        name="message"
-                        rows="6"
-                        placeholder="Message"
-                        required=""
-                      ></textarea>
-                    </div>
-
-                    <div class="col-12 text-center">
-                      <div class="loading">Loading</div>
-                      <div class="error-message"></div>
-                      <div class="sent-message">
-                        Your message has been sent. Thank you!
-                      </div>
-
-                      <button type="submit" class="btn">Send Message</button>
-                    </div>
+    <!--================ Start Testimonial Area =================-->
+    <div class="testimonial_area section_gap_bottom">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <div class="main_title">
+              <h2>client say about me</h2>
+              <p>
+                Is give may shall likeness made yielding spirit a itself togeth
+                created after sea is in beast <br />
+                beginning signs open god you're gathering ithe
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="testi_slider owl-carousel">
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4">
+                  <img src="assets/img/testimonials/t1.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Elite Martin</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4">
+                  <img src="assets/img/testimonials/t2.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Davil Saden</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4">
+                  <img src="assets/img/testimonials/t1.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Elite Martin</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4">
+                  <img src="assets/img/testimonials/t2.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Davil Saden</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4">
+                  <img src="assets/img/testimonials/t1.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Elite Martin</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4">
+                  <img src="assets/img/testimonials/t2.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Davil Saden</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <img
+                src="assets/img/portfolio/p1.jpg"
+                alt="Data Visualization Dashboard"
+              />
+              <div class="project-content">
+                <h3>Data Visualization Dashboard</h3>
+                <p>
+                  Interactive dashboard for analyzing and visualizing complex
+                  datasets with React and D3.js
+                </p>
+                <div class="tech-tags">
+                  <span class="tag purple">React</span>
+                  <span class="tag blue">D3.js</span>
+                  <span class="tag green">Node.js</span>
+                </div>
+                <a href="#" class="view-link">View Project →</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <img
+                src="assets/img/portfolio/p1.jpg"
+                alt="Data Visualization Dashboard"
+              />
+              <div class="project-content">
+                <h3>Data Visualization Dashboard</h3>
+                <p>
+                  Interactive dashboard for analyzing and visualizing complex
+                  datasets with React and D3.js
+                </p>
+                <div class="tech-tags">
+                  <span class="tag purple">React</span>
+                  <span class="tag blue">D3.js</span>
+                  <span class="tag green">Node.js</span>
+                </div>
+                <a href="#" class="view-link">View Project →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================ End Testimonial Area =================-->
+
+    <!--================ Start Newsletter Area =================-->
+    <section id="contact" class="newsletter_area">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-12">
+            <div class="subscription_box text-center">
+              <h2 class="text-uppercase text-white">
+                get update from anywhere
+              </h2>
+              <p class="text-white">
+                Bearing Void gathering light light his eavening unto dont
+                afraid.
+              </p>
+              <div class="subcribe-form" id="mc_embed_signup">
+                <form
+                  target="_blank"
+                  novalidate="true"
+                  action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                  method="get"
+                  class="subscription relative"
+                >
+                  <input
+                    name="EMAIL"
+                    placeholder="Email address"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Email address'"
+                    required=""
+                    type="email"
+                  />
+                  <div style="position: absolute; left: -5000px">
+                    <input
+                      name="b_36c4fd991d266f23781ded980_aefe40901a"
+                      tabindex="-1"
+                      value=""
+                      type="text"
+                    />
+                  </div>
+                  <button class="primary-btn hover d-inline">
+                    Get Started
+                  </button>
+                  <div class="info"></div>
                 </form>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- /Contact Section -->
-    </main>
+      </div>
+    </section>
+    <!--================ End Newsletter Area =================-->
 
-    <footer id="footer" class="footer position-relative">
+    <!--================Footer Area =================-->
+    <footer class="footer_area">
       <div class="container">
-        <div class="copyright text-center">
-          <p>
-            <strong class="px-1 sitename">Portfolio</strong>
-          </p>
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="footer_top flex-column">
+              <div class="footer_logo">
+                <a href="#">
+                  <img src="img/logo.png" alt="" />
+                </a>
+                <h4>Follow Me</h4>
+              </div>
+              <div class="footer_social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="#"><i class="fa fa-behance"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          <a
-            href="https://www.instagram.com/triprytn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==/"
-            >Bayu Tri Prayitno</a
-          >
+        <div class="row footer_bottom justify-content-center">
+          <p class="col-lg-8 col-sm-12 footer-text">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | This template is made with
+            <i class="fa fa-heart-o" aria-hidden="true"></i> by
+            <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
         </div>
       </div>
     </footer>
+    <!--================End Footer Area =================-->
 
-    <!-- Scroll Top -->
-    <a
-      href="#"
-      id="scroll-top"
-      class="scroll-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/typed.js/typed.umd.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Main JS File -->
+    <script src="assets/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="assets/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendors/isotope/isotope-min.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="assets/js/main.js"></script>
+    <!-- Typed.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      // typed-init.js
+      document.addEventListener("DOMContentLoaded", function () {
+        const typedSpan = document.querySelector(".typed");
+        if (typedSpan) {
+          let items = typedSpan.getAttribute("data-typed-items");
+          items = items.split(",").map((item) => item.trim());
+
+          new Typed(".typed", {
+            strings: items,
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 1500,
+            loop: true,
+          });
+        }
+      });
+    </script>
   </body>
 </html>
