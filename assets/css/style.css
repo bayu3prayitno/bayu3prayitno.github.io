@@ -3116,9 +3116,12 @@ h6 {
 .brand_area {
   padding-bottom: 170px;
 }
+
 @media (max-width: 1199px) {
   .brand_area {
     padding-bottom: 80px;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -3233,6 +3236,7 @@ h6 {
 @media (max-width: 575px) {
   .client-info {
     padding-top: 50px;
+    width: 100%;
   }
 }
 .client-info:before {
@@ -3240,7 +3244,7 @@ h6 {
   position: absolute;
   top: -25px;
   left: -50px;
-  background: url(../img/client-info-bg.png) no-repeat;
+  background: url(../assets/img/client-info-bg.png) no-repeat;
   height: 175px;
   width: 175px;
 }
@@ -3264,6 +3268,14 @@ h6 {
   position: relative;
   z-index: 9;
 }
+
+@media (max-width: 991px) {
+  .client-info .lage {
+  font-size: 60px;
+  font-weight: 100%;
+}
+}
+
 .client-info p {
   text-align: left;
   font-family: "Rubik", sans-serif;
@@ -3324,6 +3336,11 @@ h6 {
   border-color: #6b21a8;
 }
 
+@media (max-width: 991px) {
+  .portfolio_area {
+    width: 100%;
+  }
+}
 /* Start Portfolio Area css
 ============================================================================================ */
 .projects-container {
