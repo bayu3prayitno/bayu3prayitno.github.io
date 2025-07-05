@@ -225,12 +225,65 @@ button:focus {
   background: -moz-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
   background: -o-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
   background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* End Gradient Area css
 ============================================================================================ */
+.dropdown {
+  display: inline-block;
+  color: #fff;
+  letter-spacing: 0px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 46px;
+  outline: none !important;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%),
+    radial-gradient(circle at top left, #4458dc, #854fee);
+  border: double 2px transparent;
+  box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
+}
+
+.dropdown-toggle {
+  display: inline-block;
+  color: #fff;
+  letter-spacing: 0px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 46px;
+  outline: none !important;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%),
+    radial-gradient(circle at top left, #4458dc, #854fee);
+  border: double 2px transparent;
+  box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
+}
+
+.dropdown button {
+  padding: 0 42px;
+}
+.dropdown-toggle:hover {
+  background-image: linear-gradient(#ffffff, #ffffff),
+    radial-gradient(circle at top left, #4458dc, #854fee);
+  border: 2px solid #854fee;
+  color: #222222;
+  box-shadow: none;
+  background-clip: border-box;
+}
+
 .primary_btn {
   display: inline-block;
   color: #fff;
@@ -251,9 +304,11 @@ button:focus {
   border: double 2px transparent;
   box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
 }
+
 .primary_btn span {
   padding: 0 42px;
 }
+
 .primary_btn.tr-bg {
   background-image: linear-gradient(#ffffff, #ffffff),
     radial-gradient(circle at top left, #4458dc, #854fee);
@@ -1507,76 +1562,221 @@ button:focus {
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 /*============== contact_area css ================*/
-.mapBox {
-  height: 420px;
-  margin-top: 80px;
+.contact-section {
+  background: #121212;
+  color: #fff;
+  padding: 60px 20px;
 }
 
-.contact_info .info_item {
-  position: relative;
-  padding-left: 45px;
+.contact .container {
+  padding-bottom: 100px;
 }
-.contact_info .info_item i {
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 600;
+
+.container {
+  max-width: 1100px;
+  margin: auto;
 }
-.contact_info .info_item h6 {
-  font-size: 16px;
-  line-height: 24px;
-  color: "Roboto", sans-serif;
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
   font-weight: bold;
-  margin-bottom: 0px;
-  color: #000000;
-}
-.contact_info .info_item h6 a {
-  color: #000000;
-}
-.contact_info .info_item p {
-  font-size: 14px;
-  line-height: 24px;
-  padding: 2px 0px;
+  margin-bottom: 40px;
+  color: #fff;
+  border-bottom: 3px solid #6000c1;
+  display: table-column;
+  padding-bottom: 10px;
 }
 
-.contact_form .form-group {
-  margin-bottom: 10px;
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
 }
-.contact_form .form-group .form-control {
-  font-size: 13px;
-  line-height: 26px;
-  color: #999;
-  border: 1px solid #eeeeee;
-  font-family: "Roboto", sans-serif;
-  border-radius: 0px;
-  padding-left: 20px;
+
+.contact-info,
+.contact-form {
+  flex: 1 1 45%;
+  padding: 30px;
+  border-radius: 15px;
 }
-.contact_form .form-group .form-control:focus {
+
+.contact-info {
+  background: linear-gradient(to right, #4458dc 0%, #854fee 100%);
+  color: #fff;
+}
+
+.contact-info h3 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: white;
+}
+
+.contact-form h3 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: purple;
+}
+
+.info-block {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.info-block .icon-circle {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: white;
+  color: #4458dc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.info-block p {
+  font-size: 16px;
+  text-align: left;
+  color: #000;
+}
+
+.info-block .text h4 {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.contact-container .contact-form {
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.08);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.split {
+  flex-direction: row;
+  gap: 20px;
+}
+
+input,
+textarea {
+  background: #eeeeee;
+  color: #fff;
+  border: 1px solid purple;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.send-btn {
+  background: linear-gradient(to right, #4458dc 0%, #854fee 100%);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.send-btn:hover {
+  background-image: linear-gradient(#ffffff, #ffffff),
+    radial-gradient(circle at top left, #4458dc, #854fee);
+  border: 2px solid #854fee;
+  color: #222222;
   box-shadow: none;
-  outline: none;
+  background-clip: border-box;
 }
-.contact_form .form-group .form-control.placeholder {
-  color: #999;
+
+/* Responsive contact */
+@media (max-width: 991px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-info,
+  .contact-form {
+    flex: 1 1 100%;
+    padding: 20px;
+  }
+
+  .form-group.split {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .send-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .info-block {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .info-block .icon-circle {
+    margin-right: 10px;
+  }
+
+  .info-block .text {
+    flex: 1;
+  }
 }
-.contact_form .form-group .form-control:-moz-placeholder {
-  color: #999;
-}
-.contact_form .form-group .form-control::-moz-placeholder {
-  color: #999;
-}
-.contact_form .form-group .form-control::-webkit-input-placeholder {
-  color: #999;
-}
-.contact_form .form-group textarea {
-  resize: none;
-}
-.contact_form .form-group textarea.form-control {
-  height: 134px;
-}
-.contact_form .primary_btn {
-  margin-top: 20px;
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .contact-form h3,
+  .contact-info h3 {
+    font-size: 20px;
+  }
+
+  .info-block .icon-circle {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .form-group.split {
+    flex-direction: column;
+  }
+
+  .send-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
 
 /* Contact Success and error Area css
@@ -3271,9 +3471,9 @@ h6 {
 
 @media (max-width: 991px) {
   .client-info .lage {
-  font-size: 60px;
-  font-weight: 100%;
-}
+    font-size: 60px;
+    font-weight: 100%;
+  }
 }
 
 .client-info p {
@@ -3967,10 +4167,10 @@ h6 {
   /* Footer Area css
   ============================================================================================ */
   .footer_area {
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
-    background-image: none !important;
-    background-color: #fcf8ff;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: linear-gradient(to right, #4458dc, #854fee);
+    color: white; /* Agar teks bisa dibaca di atas background gelap */
   }
 
   /* Blog page Area css
@@ -4297,9 +4497,12 @@ h6 {
 }
 
 .footer_area {
-  padding: 120px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   position: relative;
+  background: #040720;
 }
+
 .footer_area:before {
   content: "";
   position: absolute;
@@ -4315,21 +4518,80 @@ h6 {
     padding: 60px 0;
   }
 }
-.footer_area .footer_logo {
-  text-align: center;
+.footer_top .footer_logo {
+  text-align: left;
 }
+@media (max-width: 576px) {
+  .footer_top .footer_logo {
+    text-align: center;
+  }
+}
+.footer_top {
+  display: grid;
+  align-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 80vw; /* pastikan selebar layar */
+  margin-left: 150px;
+  margin-right: 100px; /* hilangkan margin */
+  box-sizing: border-box;
+  border-bottom: 2px solid #444;
+}
+
+/* Tablet: ubah margin & layout */
+@media (max-width: 992px) {
+  .footer_top {
+    grid-template-columns: 1fr; /* stack vertical */
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 90vw;
+    text-align: center; /* opsional */
+  }
+}
+
+/* HP: full width, padding kecil */
+@media (max-width: 576px) {
+  .footer_top {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    width: 100vw;
+    padding: 1rem;
+    text-align: center; /* opsional */
+  }
+}
+
 .footer_area .footer_logo h4 {
+  margin: 0;
   font-size: 20px;
-  color: #000000;
-  margin-top: 35px;
-  text-transform: uppercase;
+  font-weight: bold;
+  background: linear-gradient(to right, #4458dc, #854fee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.footer_area .footer_social {
-  text-align: center;
+.footer_area .footer_logo a {
+  display: flex;
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 5px;
+  text-decoration: none;
+}
+.footer_top .footer_social {
+  text-align: right;
   margin: 25px 0px 30px;
+  width: 50vw; /* pastikan selebar layar */
+  margin: 0; /* hilangkan margin */
+  padding: 2rem; /* padding dalam opsional */
+}
+@media (max-width: 576px) {
+  .footer_top .footer_social {
+    text-align: center;
+  }
 }
 .footer_area .footer_social a {
-  padding: 0 20px;
+  margin-left: 15px;
+  font-size: 11px;
+  color: #ccc;
+  transition: color 0.3s;
 }
 .footer_area .footer_social a i {
   color: #788489;
@@ -4338,23 +4600,26 @@ h6 {
   -moz-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
+  color: white;
 }
 @media (max-width: 576px) {
   .footer_area .footer_social a i {
     font-size: 25px;
+    color: white;
   }
 }
 .footer_area .footer_social a i:hover {
-  color: #854fee;
+  color: black;
 }
 .footer_area .footer_bottom {
   text-align: center;
 }
 .footer_area .footer_bottom p {
   margin-bottom: 0;
+  color: wheat;
 }
 .footer_area .footer_bottom a {
-  color: #854fee;
+  color: wheat;
 }
 
 /* End Footer Area css
