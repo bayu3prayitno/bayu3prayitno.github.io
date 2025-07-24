@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/bayu3prayitno/bayu3prayitno.github.io.git",
+  "homepage": "https://prayitno.me",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
