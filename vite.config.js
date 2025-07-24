@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/portofolio/',
+  base: '/', // Root path untuk username.github.io
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
