@@ -185,15 +185,21 @@ const Activities = () => {
 
           {/* Activities Grid */}
           <motion.div
+            key={filter} // Add key untuk re-render saat filter berubah
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            animate="visible"
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {filteredActivities.map((activity, index) => (
-              <ActivityCard key={activity.id} activity={activity} index={index} />
-            ))}
+            {filteredActivities.length > 0 ? (
+              filteredActivities.map((activity, index) => (
+                <ActivityCard key={`${filter}-${activity.id}-${index}`} activity={activity} index={index} />
+              ))
+            ) : (
+              <div className="col-span-full text-center py-12">
+                <p className="text-gray-500 dark:text-gray-400">No activities found for this type.</p>
+              </div>
+            )}
           </motion.div>
 
           {/* Activity Modal */}

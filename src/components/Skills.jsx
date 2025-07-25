@@ -154,11 +154,23 @@ const Skills = () => {
               </div>
 
               {/* Skills Badge Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {filteredSkills.map((skill, index) => (
-                  <SkillBadge key={skill.name} skill={skill} index={index} />
-                ))}
-              </div>
+              <motion.div
+                key={selectedCategory} // Add key untuk re-render saat filter berubah
+                initial="hidden"
+                animate="visible"
+                variants={containerVariants}
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+              >
+                {filteredSkills.length > 0 ? (
+                  filteredSkills.map((skill, index) => (
+                    <SkillBadge key={`${selectedCategory}-${skill.name}-${index}`} skill={skill} index={index} />
+                  ))
+                ) : (
+                  <div className="col-span-full text-center py-12">
+                    <p className="text-gray-500 dark:text-gray-400">No skills found for this category.</p>
+                  </div>
+                )}
+              </motion.div>
             </motion.div>
           )}
 
