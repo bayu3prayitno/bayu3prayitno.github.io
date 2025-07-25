@@ -114,7 +114,7 @@ const Home = () => {
                   }}
                 />
               </div>
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full blur opacity-20"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full opacity-20"></div>
             </div>
           </motion.div>
         </div>

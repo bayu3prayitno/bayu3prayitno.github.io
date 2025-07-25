@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Eye, Code, Star } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { ExternalLink, Github, Eye, Code, Star, Calendar, Users, Clock, CheckCircle, ArrowLeft, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { projects } from '../data/portfolioData';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Get unique project types for filtering
   const projectTypes = ['all', ...new Set(projects.flatMap(project => 
@@ -180,65 +181,228 @@ const Projects = () => {
 
           {/* Project Modal */}
           {selectedProject && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-white dark:bg-dark-900 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-              >
-                <div className="relative">
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    className="w-full h-64 object-cover rounded-t-xl"
-                    onError={(e) => {
-                      e.target.src = `https://via.placeholder.com/600x300/3b82f6/ffffff?text=${encodeURIComponent(selectedProject.title)}`;
-                    }}
-                  />
-                  <button
-                    onClick={() => setSelectedProject(null)}
-                    className="absolute top-4 right-4 p-2 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200"
-                  >
-                    ×
-                  </button>
-                </div>
-                
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                    {selectedProject.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                    {selectedProject.description}
-                  </p>
-                  
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Technologies Used:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((tech, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-500 text-sm font-medium rounded-full"
-                        >
-                          {tech}
+            <AnimatePresence>
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 50 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 50 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-white dark:bg-dark-900 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                >
+                  {/* Header with Image Gallery */}
+                  <div className="relative">
+                    <div className="relative h-80 overflow-hidden rounded-t-xl">
+                      <img
+                        src={selectedProject.gallery ? selectedProject.gallery[currentImageIndex] : selectedProject.image}
+                        alt={selectedProject.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.src = `https://via.placeholder.com/800x400/3b82f6/ffffff?text=${encodeURIComponent(selectedProject.title)}`;
+                        }}
+                      />
+                      
+                      {/* Gallery Navigation */}
+                      {selectedProject.gallery && selectedProject.gallery.length > 1 && (
+                        <>
+                          <button
+                            onClick={() => setCurrentImageIndex(prev => 
+                              prev === 0 ? selectedProject.gallery.length - 1 : prev - 1
+                            )}
+                            className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200"
+                          >
+                            <ArrowLeft size={20} />
+                          </button>
+                          <button
+                            onClick={() => setCurrentImageIndex(prev => 
+                              prev === selectedProject.gallery.length - 1 ? 0 : prev + 1
+                            )}
+                            className="absolute right-16 top-1/2 transform -translate-y-1/2 p-2 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200"
+                          >
+                            <ArrowRight size={20} />
+                          </button>
+                          
+                          {/* Image indicators */}
+                          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                            {selectedProject.gallery.map((_, index) => (
+                              <button
+                                key={index}
+                                onClick={() => setCurrentImageIndex(index)}
+                                className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                                  index === currentImageIndex 
+                                    ? 'bg-white' 
+                                    : 'bg-white bg-opacity-50'
+                                }`}
+                              />
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
+                    
+                    {/* Close Button */}
+                    <button
+                      onClick={() => {
+                        setSelectedProject(null);
+                        setCurrentImageIndex(0);
+                      }}
+                      className="absolute top-4 right-4 p-2 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200"
+                    >
+                      ×
+                    </button>
+                    
+                    {/* Status Badge */}
+                    {selectedProject.status && (
+                      <div className="absolute top-4 left-4">
+                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                          selectedProject.status === 'Completed' 
+                            ? 'bg-green-500 text-white' 
+                            : selectedProject.status === 'In Progress'
+                            ? 'bg-yellow-500 text-white'
+                            : 'bg-gray-500 text-white'
+                        }`}>
+                          {selectedProject.status}
                         </span>
-                      ))}
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="p-8">
+                    {/* Project Header */}
+                    <div className="mb-6">
+                      <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                        {selectedProject.title}
+                      </h3>
+                      
+                      {/* Project Meta Info */}
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                        {selectedProject.duration && (
+                          <div className="flex items-center space-x-1">
+                            <Clock size={16} />
+                            <span>{selectedProject.duration}</span>
+                          </div>
+                        )}
+                        {selectedProject.team && (
+                          <div className="flex items-center space-x-1">
+                            <Users size={16} />
+                            <span>{selectedProject.team}</span>
+                          </div>
+                        )}
+                        {selectedProject.role && (
+                          <div className="flex items-center space-x-1">
+                            <CheckCircle size={16} />
+                            <span>{selectedProject.role}</span>
+                          </div>
+                        )}
+                      </div>
+                      
+                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {selectedProject.longDescription || selectedProject.description}
+                      </p>
+                    </div>
+
+                    {/* Features Section */}
+                    {selectedProject.features && (
+                      <div className="mb-6">
+                        <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                          Key Features
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          {selectedProject.features.map((feature, index) => (
+                            <div key={index} className="flex items-start space-x-2">
+                              <CheckCircle size={16} className="text-green-500 mt-1 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300 text-sm">
+                                {feature}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Challenges & Solutions */}
+                    {selectedProject.challenges && (
+                      <div className="mb-6">
+                        <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                          Challenges & Solutions
+                        </h4>
+                        <div className="space-y-2">
+                          {selectedProject.challenges.map((challenge, index) => (
+                            <div key={index} className="flex items-start space-x-2">
+                              <Code size={16} className="text-primary-500 mt-1 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300 text-sm">
+                                {challenge}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Achievements */}
+                    {selectedProject.achievements && (
+                      <div className="mb-6">
+                        <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                          Key Achievements
+                        </h4>
+                        <div className="space-y-2">
+                          {selectedProject.achievements.map((achievement, index) => (
+                            <div key={index} className="flex items-start space-x-2">
+                              <Star size={16} className="text-yellow-500 mt-1 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300 text-sm">
+                                {achievement}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Technologies */}
+                    <div className="mb-8">
+                      <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                        Technologies Used
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProject.technologies.map((tech, index) => (
+                          <span
+                            key={index}
+                            className="px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-500 text-sm font-medium rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Action Buttons */}
+                    <div className="flex flex-wrap gap-4">
+                      <a
+                        href={selectedProject.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-secondary flex items-center space-x-2"
+                      >
+                        <Github size={20} />
+                        <span>View Code</span>
+                      </a>
+                      
+                      {selectedProject.demo && (
+                        <a
+                          href={selectedProject.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary flex items-center space-x-2"
+                        >
+                          <ExternalLink size={20} />
+                          <span>Live Demo</span>
+                        </a>
+                      )}
                     </div>
                   </div>
-                  
-                  <div className="flex space-x-4">
-                    <a
-                      href={selectedProject.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-secondary flex items-center space-x-2"
-                    >
-                      <Github size={20} />
-                      <span>View Code</span>
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+                </motion.div>
+              </div>
+            </AnimatePresence>
           )}
 
           {/* Call to Action */}
