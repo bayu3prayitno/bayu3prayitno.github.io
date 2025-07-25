@@ -29,6 +29,8 @@ export const skills = {
     { name: "Firebase", category: "Backend" },
     { name: "Flutter", category: "Programming" },
     { name: "IOT", category: "Programming" },
+    { name: "Visual Studio Code", category: "Tools" },
+    { name: "Laravel", category: "Backend" },
   ],
   soft: [
     "Problem Solving",
@@ -37,7 +39,6 @@ export const skills = {
     "Manajemen Waktu",
     "Pemikiran Kritis",
     "Adaptabilitas",
-    "Kepemimpinan",
     "Pemikiran Kreatif",
   ],
 };
@@ -49,13 +50,66 @@ export const education = [
     degree: "Program Studi Teknologi Rekayasa Komputer",
     period: "2022 - Sekarang",
     IPK: "3.74 / 4.00",
+    gpa: "3.74 / 4.00",
+    location: "Semarang, Jawa Tengah",
+    image: "/assets/profile/pp.jpg", // placeholder, bisa diganti dengan foto kampus
+    color: "from-blue-500 to-blue-600",
+    description: "Fokus pada pengembangan teknologi komputer, sistem tertanam, dan rekayasa perangkat lunak. Mempelajari pemrograman, jaringan komputer, IoT, dan teknologi terkini.",
+    achievements: [
+      "IPK 3.74 dari 4.00",
+      "Aktif dalam organisasi dan kegiatan kampus",
+      "Mengembangkan berbagai project teknologi",
+      "Magang di perusahaan teknologi"
+    ]
   },
   {
     id: 2,
     institution: "SMK Negeri 1 Batang",
     degree: "Teknik Komputer dan Jaringan",
     period: "2019 - 2022",
+    gpa: "-",
+    location: "Batang, Jawa Tengah",
+    image: "/assets/profile/pp.jpg", // placeholder, bisa diganti dengan foto sekolah
+    color: "from-green-500 to-green-600",
+    description: "Mempelajari dasar-dasar teknik komputer, jaringan, dan sistem operasi. Mendapatkan fondasi yang kuat dalam teknologi informasi dan komunikasi.",
+    achievements: [
+      "Lulus dengan nilai memuaskan",
+      "Aktif dalam kegiatan ekstrakurikuler",
+      "Mengikuti berbagai kompetisi teknologi",
+      "Sertifikasi kompetensi TKJ"
+    ]
   },
+];
+
+export const courses = [
+  {
+    title: "Flutter Mobile Development",
+    provider: "Udemy",
+    year: "2023",
+    duration: "40 hours",
+    skills: ["Flutter", "Dart", "Firebase", "Mobile UI/UX"]
+  },
+  {
+    title: "Web Development with Laravel",
+    provider: "Online Course",
+    year: "2023",
+    duration: "60 hours",
+    skills: ["Laravel", "PHP", "MySQL", "MVC Pattern"]
+  },
+  {
+    title: "JavaScript Programming",
+    provider: "FreeCodeCamp",
+    year: "2022",
+    duration: "50 hours",
+    skills: ["JavaScript", "ES6+", "DOM Manipulation", "APIs"]
+  },
+  {
+    title: "Python for Beginners",
+    provider: "Coursera",
+    year: "2022",
+    duration: "30 hours",
+    skills: ["Python", "Data Structures", "Algorithms", "OOP"]
+  }
 ];
 
 export const projects = [
@@ -86,7 +140,8 @@ export const projects = [
       "Aplikasi edukasi berbasis AR yang menawarkan cara belajar tentang tata surya secara imersif dan interaktif.",
     technologies: ["Unity", "C#", "AR Foundation"],
     image: "/assets/Projects/mobile/2.png",
-    github: "https://drive.google.com/file/d/1ZQBZBwXx3HdBY06S-HpBTiwDrcD-VkVd/view?usp=drive_link",
+    github:
+      "https://drive.google.com/file/d/1ZQBZBwXx3HdBY06S-HpBTiwDrcD-VkVd/view?usp=drive_link",
     featured: true,
   },
   {
@@ -116,7 +171,8 @@ export const projects = [
       "Melakukan desain UI/UX menggunakan Figma untuk menciptakan antarmuka yang intuitif, estetis, dan user-friendly.",
     technologies: ["Figma", "UI/UX Design"],
     image: "/assets/Projects/mobile/5.png",
-    github: "https://www.figma.com/design/SX6Yda2HrEQNDhNvBgn6rh/Cloud-Pudding?node-id=31-397&t=k6zEOAB6WpkeHBOm-1",
+    github:
+      "https://www.figma.com/design/SX6Yda2HrEQNDhNvBgn6rh/Cloud-Pudding?node-id=31-397&t=k6zEOAB6WpkeHBOm-1",
     featured: true,
   },
 ];
@@ -147,16 +203,19 @@ export const activities = [
     title: "Pimpinan Ranting IPNU Tragung",
     type: "Organisasi",
     date: "2020-2022",
-    description: "Aktif dalm organisasi pelajar IPNU di tingkat ranting sebagai Sekertaris.",
+    description:
+      "Aktif dalm organisasi pelajar IPNU di tingkat ranting sebagai Sekertaris.",
     image: "/assets/kegiatan/ipnu.jpg",
     certificate: null,
   },
   {
     id: 4,
-    title: "Pengembangan Sistem Monitoring Kualitas Udara Ruangan Berbasis Iot Menggunakan Sensor Mq135 Dan Dht11.",
+    title:
+      "Pengembangan Sistem Monitoring Kualitas Udara Ruangan Berbasis Iot Menggunakan Sensor Mq135 Dan Dht11.",
     type: "JOURNAL PUBLICATION",
     date: "2024",
-    description: "Merupakan publikasi jurnal ilmiah tentang sistem monitoring kualitas udara berbasis IoT.",
+    description:
+      "Merupakan publikasi jurnal ilmiah tentang sistem monitoring kualitas udara berbasis IoT.",
     image: "/assets/kegiatan/jurnal.png",
     certificate: null,
   },

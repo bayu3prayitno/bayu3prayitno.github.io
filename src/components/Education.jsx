@@ -1,9 +1,12 @@
 import React from 'react';
-import { GraduationCap, Calendar, Award, MapPin } from 'lucide-react';
+import { GraduationCap, Calendar, Award, MapPin, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { education } from '../data/portfolioData';
+import { education, courses } from '../data/portfolioData';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Education = () => {
+  const { isDarkMode: isDark } = useTheme();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -26,107 +29,212 @@ const Education = () => {
   };
 
   return (
-    <section id="education" className="py-20 bg-white dark:bg-dark-900">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="education" className={`py-20 ${
+      isDark ? 'bg-gray-900' : 'bg-gradient-to-br from-blue-50 to-indigo-50'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <h2 className="section-title">Education</h2>
+          <h2 className={`text-4xl font-bold mb-4 ${
+            isDark ? 'text-white' : 'text-gray-900'
+          }`}>
+            Education & Learning
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-teal-600 mx-auto mb-6"></div>
+          <p className={`text-lg max-w-2xl mx-auto ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            Perjalanan pendidikan formal dan pembelajaran berkelanjutan yang membentuk expertise saya
+          </p>
+        </motion.div>
+
+        {/* Formal Education - Vertical Layout */}
+        <div className="mb-16">
+          <h3 className={`text-2xl font-bold mb-8 text-center ${
+            isDark ? 'text-white' : 'text-gray-900'
+          }`}>
+            Pendidikan Formal
+          </h3>
           
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="relative max-w-4xl mx-auto"
+            className="space-y-8"
           >
-            {/* Timeline Line */}
-            <div className="absolute left-8 top-0 h-full w-0.5 bg-gradient-to-b from-primary-500 to-blue-600"></div>
-
             {education.map((edu, index) => (
-              <motion.div
+              <motion.div 
                 key={edu.id}
                 variants={itemVariants}
-                className="relative flex items-start mb-12"
+                className={`${
+                  isDark 
+                    ? 'bg-gray-800 border border-gray-700' 
+                    : 'bg-white border border-gray-200 shadow-lg'
+                } rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl group`}
               >
-                {/* Timeline Dot */}
-                <div className="absolute left-6 top-8 w-4 h-4 bg-primary-500 border-4 border-white dark:border-dark-900 rounded-full z-10"></div>
-
-                {/* Content Card */}
-                <div className="w-full ml-16">
-                  <div className="card p-8 hover:shadow-xl transition-shadow duration-300">
-                    {/* Header */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
-                          <GraduationCap className="w-6 h-6 text-primary-500" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                            {edu.degree}
-                          </h3>
-                          <p className="text-primary-500 font-medium">{edu.institution}</p>
-                        </div>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {/* Image */}
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={edu.image} 
+                      alt={edu.degree}
+                      className="w-full h-64 md:h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => {
+                        e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(edu.institution)}&size=400&background=3b82f6&color=ffffff`;
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    
+                    <div className="absolute top-4 left-4">
+                      <div className={`flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${edu.color} text-white`}>
+                        <GraduationCap size={12} className="mr-1" />
+                        {edu.period}
                       </div>
-                      {edu.IPK && (
-                        <div className="text-right">
-                          <span className="text-sm text-gray-500 dark:text-gray-400">IPK</span>
-                          <p className="text-lg font-semibold text-gray-900 dark:text-white">
-                            {edu.IPK}
-                          </p>
-                        </div>
-                      )}
                     </div>
-
-                    {/* Period */}
-                    <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 mb-4">
-                      <Calendar className="w-4 h-4" />
-                      <span className="text-sm font-medium">{edu.period}</span>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="md:col-span-2 p-6">
+                    <h4 className={`text-2xl font-bold mb-3 ${
+                      isDark ? 'text-white' : 'text-gray-900'
+                    }`}>
+                      {edu.degree}
+                    </h4>
+                    
+                    <div className="flex items-center mb-2">
+                      <BookOpen size={16} className={`mr-2 ${
+                        isDark ? 'text-blue-400' : 'text-blue-600'
+                      }`} />
+                      <p className={`font-medium text-lg ${
+                        isDark ? 'text-blue-400' : 'text-blue-600'
+                      }`}>
+                        {edu.institution}
+                      </p>
                     </div>
-
-                    {/* Description */}
-                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                    
+                    <div className="flex items-center mb-2">
+                      <MapPin size={16} className={`mr-2 ${
+                        isDark ? 'text-gray-400' : 'text-gray-600'
+                      }`} />
+                      <p className={`${
+                        isDark ? 'text-gray-400' : 'text-gray-600'
+                      }`}>
+                        {edu.location}
+                      </p>
+                    </div>
+                    
+                    <div className="flex items-center mb-4">
+                      <Award size={16} className={`mr-2 ${
+                        isDark ? 'text-yellow-400' : 'text-yellow-600'
+                      }`} />
+                      <p className={`font-medium ${
+                        isDark ? 'text-yellow-400' : 'text-yellow-600'
+                      }`}>
+                        {edu.gpa !== '-' ? `GPA: ${edu.gpa}` : 'Teknik Komputer dan Jaringan'}
+                      </p>
+                    </div>
+                    
+                    <p className={`mb-6 leading-relaxed ${
+                      isDark ? 'text-gray-300' : 'text-gray-600'
+                    }`}>
                       {edu.description}
                     </p>
-
-                    {/* Achievements */}
-                    {edu.achievements && edu.achievements.length > 0 && (
-                      <div>
-                        <div className="flex items-center space-x-2 mb-3">
-                          <Award className="w-5 h-5 text-primary-500" />
-                          <h4 className="font-semibold text-gray-900 dark:text-white">
-                            Key Achievements
-                          </h4>
-                        </div>
-                        <ul className="space-y-2">
-                          {edu.achievements.map((achievement, achieveIndex) => (
-                            <li
-                              key={achieveIndex}
-                              className="flex items-start space-x-2 text-gray-600 dark:text-gray-300"
-                            >
-                              <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-sm">{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* Decorative Element */}
-                    <div className="absolute top-4 right-4 opacity-10">
-                      <GraduationCap className="w-12 h-12 text-primary-500" />
+                    
+                    <div>
+                      <h5 className={`font-semibold mb-3 ${
+                        isDark ? 'text-white' : 'text-gray-900'
+                      }`}>
+                        Achievements:
+                      </h5>
+                      <ul className="space-y-2">
+                        {edu.achievements.map((achievement, achIndex) => (
+                          <li key={achIndex} className={`flex items-center ${
+                            isDark ? 'text-gray-300' : 'text-gray-600'
+                          }`}>
+                            <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full mr-3"></div>
+                            {achievement}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
               </motion.div>
             ))}
           </motion.div>
+        </div>
 
-          {/* Additional Info */}
+        {/* Online Courses & Certifications */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className={`text-2xl font-bold mb-8 text-center ${
+            isDark ? 'text-white' : 'text-gray-900'
+          }`}>
+            Online Courses & Certifications
+          </h3>
           
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className="grid md:grid-cols-2 gap-6"
+          >
+            {courses.map((course, index) => (
+              <motion.div 
+                key={index}
+                variants={itemVariants}
+                className={`p-6 rounded-xl transition-all duration-500 hover:scale-105 hover:shadow-lg ${
+                  isDark 
+                    ? 'bg-gray-800 border border-gray-700' 
+                    : 'bg-white border border-gray-200 shadow-lg'
+                }`}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <h4 className={`text-lg font-bold mb-2 ${
+                      isDark ? 'text-white' : 'text-gray-900'
+                    }`}>
+                      {course.title}
+                    </h4>
+                    <p className={`font-medium ${
+                      isDark ? 'text-blue-400' : 'text-blue-600'
+                    }`}>
+                      {course.provider}
+                    </p>
+                  </div>
+                  <div className={`text-right ${
+                    isDark ? 'text-gray-400' : 'text-gray-600'
+                  }`}>
+                    <p className="font-medium">{course.year}</p>
+                    <p className="text-sm">{course.duration}</p>
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {course.skills.map((skill, skillIndex) => (
+                    <span key={skillIndex} className={`px-3 py-1 text-xs rounded-full transition-all duration-200 hover:scale-105 ${
+                      isDark 
+                        ? 'bg-gray-700 text-gray-300 border border-gray-600' 
+                        : 'bg-gray-100 text-gray-700 border border-gray-200'
+                    }`}>
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </section>
