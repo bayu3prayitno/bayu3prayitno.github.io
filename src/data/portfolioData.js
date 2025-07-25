@@ -19,13 +19,9 @@ export const socialLinks = {
 };
 
 export const jobTitles = [
-  "Software Developer",
-  "Frontend Developer", 
-  "Backend Developer",
-  "IoT Developer",
-  "Mobile Developer",
-  "Full Stack Developer",
-  "Web Developer"
+  "POLINES students",
+  "Tech Enthusiast",
+  "IT Professional in Training",
 ];
 
 export const skills = {
@@ -135,6 +131,7 @@ export const projects = [
   {
     id: 1,
     title: "Psikotes Online",
+    type : "web",
     description:
       "Berkontribusi dalam pengembangan halaman web yang dinamis, terstruktur dengan baik, dan responsif menggunakan HTML, CSS, dan JavaScript.",
     technologies: ["Laravel", "html", "css", "javascript", "filament"],
@@ -145,6 +142,7 @@ export const projects = [
   {
     id: 2,
     title: "Futsal field booking system",
+    type : "mobile",
     description:
       "Merancang dan mengembangkan aplikasi menggunakan Flutter yang terintegrasi dengan Firebase sebagai basis data backend.",
     technologies: ["Flutter", "Firebase", "Dart"],
@@ -155,6 +153,7 @@ export const projects = [
   {
     id: 3,
     title: "Solar System AR Aplication",
+    type : "Mobile, Game",
     description:
       "Aplikasi edukasi berbasis AR yang menawarkan cara belajar tentang tata surya secara imersif dan interaktif.",
     technologies: ["Unity", "C#", "AR Foundation"],
@@ -166,6 +165,7 @@ export const projects = [
   {
     id: 4,
     title: "Game Adventure Pangeran Cedric",
+    type : "Game",
     description:
       "Game PC yang menggabungkan elemen petualangan dan pemecahan teka-teki untuk menghadirkan pengalaman bermain yang menarik, Berkontribusi dalam pengembangan level 3 pada game, termasuk desain tantangan, alur permainan, dan penyesuaian tingkat kesulitan.",
     technologies: ["Unity", "C#", "Unity Asset Store"],
@@ -176,6 +176,7 @@ export const projects = [
   {
     id: 5,
     title: "Air Quality Monitoring System",
+    type : "IoT, Mobile",
     description:
       "Pengembangan sistem pemantauan kualitas udara dalam ruangan berbasis IoT menggunakan sensor MQ135 dan DHT11, Berkontribusi dalam perancangan alat dan pembuatan tampilan dashboard untuk memantau kualitas udara secara real-time.",
     technologies: ["ESP8266", "C++", "Flutter", "Firebase", "Python"],
@@ -186,6 +187,7 @@ export const projects = [
   {
     id: 6,
     title: "Desain UI/UX Company Profile Chanael - Chocolate And Pudding",
+    type: "UI/UX Design",
     description:
       "Melakukan desain UI/UX menggunakan Figma untuk menciptakan antarmuka yang intuitif, estetis, dan user-friendly.",
     technologies: ["Figma", "UI/UX Design"],
@@ -248,7 +250,7 @@ export const activities = [
     image: "/assets/kegiatan/revou.png",
     certificate: "/assets/doc/revou.pdf",
   },
-   {
+  {
     id: 5,
     title: "Volly Ball Turnament IPNU IPPNU Cup 2022",
     type: "Panitia",

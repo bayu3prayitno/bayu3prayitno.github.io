@@ -7,11 +7,16 @@ const Projects = () => {
   const [filter, setFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const technologies = ['all', ...new Set(projects.flatMap(project => project.technologies))];
+  // Get unique project types for filtering
+  const projectTypes = ['all', ...new Set(projects.flatMap(project => 
+    project.type.split(',').map(type => type.trim())
+  ))];
   
   const filteredProjects = filter === 'all' 
     ? projects 
-    : projects.filter(project => project.technologies.includes(filter));
+    : projects.filter(project => 
+        project.type.toLowerCase().includes(filter.toLowerCase())
+      );
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -137,19 +142,19 @@ const Projects = () => {
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 mr-4">
               <Code size={20} />
-              <span className="font-medium">Filter by technology:</span>
+              <span className="font-medium">Filter by project type:</span>
             </div>
-            {technologies.slice(0, 6).map((tech) => (
+            {projectTypes.map((type) => (
               <button
-                key={tech}
-                onClick={() => setFilter(tech)}
+                key={type}
+                onClick={() => setFilter(type)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
-                  filter === tech
+                  filter === type
                     ? 'bg-primary-500 text-white'
                     : 'bg-white dark:bg-dark-900 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/20 border border-gray-200 dark:border-dark-700'
                 }`}
               >
-                {tech.charAt(0).toUpperCase() + tech.slice(1)}
+                {type.charAt(0).toUpperCase() + type.slice(1)}
               </button>
             ))}
           </div>
@@ -168,7 +173,7 @@ const Projects = () => {
               ))
             ) : (
               <div className="col-span-full text-center py-12">
-                <p className="text-gray-500 dark:text-gray-400">No projects found for this technology.</p>
+                <p className="text-gray-500 dark:text-gray-400">No projects found for this project type.</p>
               </div>
             )}
           </motion.div>

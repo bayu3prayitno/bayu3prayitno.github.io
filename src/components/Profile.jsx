@@ -137,7 +137,7 @@ const Profile = () => {
 
                 <div className="prose dark:prose-invert max-w-none">
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                    Saya adalah mahasiswa aktif semester 6 Program Studi
+                    Saya adalah mahasiswa aktif semester 7 Program Studi
                     Teknologi Rekayasa Komputer di Politeknik Negeri Semarang.
                     Selama menempuh pendidikan, saya telah mempelajari berbagai
                     aspek teknis dalam bidang komputer, baik dari sisi Hardware
