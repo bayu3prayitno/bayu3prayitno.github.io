@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from "react";
-import {
-  ArrowDown,
-  Download,
-  Mail,
-  Github,
-  Linkedin,
-  MessageCircle,
-  Eye,
-} from "lucide-react";
-import { motion } from "framer-motion";
-import { personalData, socialLinks, jobTitles } from "../data/portfolioData";
-import { useTheme } from "../contexts/ThemeContext";
+import React, { useState, useEffect } from 'react';
+import { ArrowDown, Download, Mail, Github, Linkedin, MessageCircle, Eye } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { personalData, socialLinks, jobTitles } from '../data/portfolioData';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Home = () => {
   const { isDarkMode: isDark } = useTheme();
@@ -24,59 +16,50 @@ const Home = () => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
   };
 
   const downloadCV = () => {
     // Create a link element and trigger download
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.href = personalData.resume;
-    link.download = "CV_ats.pdf";
+    link.download = 'CV_ats.pdf';
     link.click();
   };
 
   return (
-    <section
-      id="home"
-      className={`min-h-screen flex items-center pt-16 ${
-        isDark ? "bg-gray-900" : "bg-gradient-to-br from-blue-50 to-teal-50"
-      }`}
-    >
+    <section id="home" className={`min-h-screen flex items-center pt-16 ${
+      isDark ? 'bg-gray-900' : 'bg-gradient-to-br from-blue-50 to-teal-50'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center md:text-left"
           >
             <div className="mb-6">
-              <h1
-                className={`text-4xl md:text-6xl font-bold mb-4 ${
-                  isDark ? "text-white" : "text-gray-900"
-                }`}
-              >
-                Hi, I'm{" "}
+              <h1 className={`text-4xl md:text-6xl font-bold mb-4 ${
+                isDark ? 'text-white' : 'text-gray-900'
+              }`}>
+                Hi, I'm{' '}
                 <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
                   {personalData.name}
                 </span>
               </h1>
-              <p
-                className={`text-xl md:text-2xl ${
-                  isDark ? "text-gray-300" : "text-gray-600"
-                }`}
-              >
+              <p className={`text-xl md:text-2xl ${
+                isDark ? 'text-gray-300' : 'text-gray-600'
+              }`}>
                 <span className="inline-block min-w-0 transition-all duration-500 ease-in-out">
                   {jobTitles[currentJobIndex]}
                 </span>
               </p>
             </div>
-
-            <p
-              className={`text-lg mb-8 max-w-2xl ${
-                isDark ? "text-gray-400" : "text-gray-700"
-              }`}
-            >
+            
+            <p className={`text-lg mb-8 max-w-2xl ${
+              isDark ? 'text-gray-400' : 'text-gray-700'
+            }`}>
               {personalData.bio}
             </p>
 
@@ -88,19 +71,19 @@ const Home = () => {
                 <Download size={20} className="mr-2" />
                 Download CV
               </button>
-
+              
               <button
-                onClick={() => scrollToSection("projects")}
+                onClick={() => scrollToSection('projects')}
                 className={`inline-flex items-center px-6 py-3 rounded-lg border-2 transition-colors duration-200 font-medium ${
-                  isDark
-                    ? "border-gray-600 text-gray-300 hover:bg-gray-800"
-                    : "border-gray-300 text-gray-700 hover:bg-gray-50"
+                  isDark 
+                    ? 'border-gray-600 text-gray-300 hover:bg-gray-800' 
+                    : 'border-gray-300 text-gray-700 hover:bg-gray-50'
                 }`}
               >
                 <Eye size={20} className="mr-2" />
                 View Projects
               </button>
-
+              
               <button
                 onClick={() => window.open(socialLinks.email)}
                 className="inline-flex items-center px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors duration-200 font-medium"
@@ -111,18 +94,16 @@ const Home = () => {
             </div>
           </motion.div>
 
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex justify-center"
           >
             <div className="relative">
-              <div
-                className={`w-80 h-80 rounded-full overflow-hidden border-8 ${
-                  isDark ? "border-gray-700" : "border-white"
-                } shadow-2xl`}
-              >
+              <div className={`w-80 h-80 rounded-full overflow-hidden border-8 ${
+                isDark ? 'border-gray-700' : 'border-white'
+              } shadow-2xl`}>
                 <img
                   src={personalData.image}
                   alt="Profile"
@@ -133,7 +114,7 @@ const Home = () => {
                   }}
                 />
               </div>
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full blur"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full blur opacity-50"></div>
             </div>
           </motion.div>
         </div>
