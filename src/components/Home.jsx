@@ -12,7 +12,7 @@ const Home = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
     link.href = personalData.resume;
-    link.download = 'CV_ATS.pdf';
+    link.download = '/assets/doc/CV_ats.pdf';
     link.click();
   };
 

@@ -51,16 +51,16 @@ export const education = [
     period: "2022 - Sekarang",
     IPK: "3.74 / 4.00",
     gpa: "3.74 / 4.00",
-    location: "Semarang, Jawa Tengah",
-    image: "/assets/profile/pp.jpg", // placeholder, bisa diganti dengan foto kampus
+    location:
+      "Jl. Prof. Soedarto, Tembalang, Semarang, Jawa Tengah, 50275, Indonesia",
+    image:
+      "https://blog-edutore-partner.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2022/06/14052251/polines.jpg", // placeholder, bisa diganti dengan foto kampus
     color: "from-blue-500 to-blue-600",
     description:
       "Fokus pada pengembangan teknologi komputer, sistem tertanam, dan rekayasa perangkat lunak. Mempelajari pemrograman, jaringan komputer, IoT, dan teknologi terkini.",
     achievements: [
       "IPK 3.74 dari 4.00",
-      "Aktif dalam organisasi dan kegiatan kampus",
       "Mengembangkan berbagai project teknologi",
-      "Magang di perusahaan teknologi",
     ],
   },
   {
@@ -69,7 +69,8 @@ export const education = [
     degree: "Teknik Komputer dan Jaringan",
     period: "2019 - 2022",
     gpa: "-",
-    location: "Batang, Jawa Tengah",
+    location:
+      "Jl. Ki Mangunsarkoro No.2, 03, Dracik Barat, Proyonanggan Sel., Kec. Batang, Kabupaten Batang, Jawa Tengah 51216",
     image:
       "https://smkn1batang.sch.id/wp-content/uploads/2023/01/DJI_0030-scaled.jpg", // placeholder, bisa diganti dengan foto sekolah
     color: "from-green-500 to-green-600",
@@ -85,32 +86,38 @@ export const education = [
 
 export const courses = [
   {
-    title: "Flutter Mobile Development",
+    title: "Database Programming With SQL",
+    provider: "Oracle Academy",
+    year: "2023",
+    duration: "-",
+    skills: ["SQL", "Management Database", "Data Modeling"],
+  },
+  {
+    title: "Database Design",
+    provider: "Oracle Academy",
+    year: "2023",
+    duration: "-",
+    skills: ["Database Design", "Normalization", "ER Diagrams"],
+  },
+  {
+    title: "Web Development Bootcamp",
     provider: "Udemy",
-    year: "2023",
-    duration: "40 hours",
-    skills: ["Flutter", "Dart", "Firebase", "Mobile UI/UX"],
+    year: "2025",
+    duration: "1 hours",
+    skills: [
+      "Python",
+      "Django",
+      "HTML, CSS",
+      "Bootstrap",
+      "SQLite or PostgreSQL",
+    ],
   },
   {
-    title: "Web Development with Laravel",
-    provider: "Online Course",
-    year: "2023",
-    duration: "60 hours",
-    skills: ["Laravel", "PHP", "MySQL", "MVC Pattern"],
-  },
-  {
-    title: "JavaScript Programming",
-    provider: "FreeCodeCamp",
-    year: "2022",
-    duration: "50 hours",
-    skills: ["JavaScript", "ES6+", "DOM Manipulation", "APIs"],
-  },
-  {
-    title: "Python for Beginners",
-    provider: "Coursera",
-    year: "2022",
-    duration: "30 hours",
-    skills: ["Python", "Data Structures", "Algorithms", "OOP"],
+    title: "Intro to Software Engineering",
+    provider: "RevoU",
+    year: "2025",
+    duration: "6 hours",
+    skills: ["HTML", "CSS", "JavaScript", "Git", "Mini Project"],
   },
 ];
 
@@ -151,7 +158,7 @@ export const projects = [
     title: "Game Adventure Pangeran Cedric",
     description:
       "Game PC yang menggabungkan elemen petualangan dan pemecahan teka-teki untuk menghadirkan pengalaman bermain yang menarik, Berkontribusi dalam pengembangan level 3 pada game, termasuk desain tantangan, alur permainan, dan penyesuaian tingkat kesulitan.",
-    technologies: ["Unity", "C#", "AR Foundation"],
+    technologies: ["Unity", "C#", "Unity Asset Store"],
     image: "/assets/Projects/mobile/3.png",
     github: "https://github.com/username/weather-dashboard",
     featured: true,
@@ -161,7 +168,7 @@ export const projects = [
     title: "Air Quality Monitoring System",
     description:
       "Pengembangan sistem pemantauan kualitas udara dalam ruangan berbasis IoT menggunakan sensor MQ135 dan DHT11, Berkontribusi dalam perancangan alat dan pembuatan tampilan dashboard untuk memantau kualitas udara secara real-time.",
-    technologies: ["ESP8266", "C++", "Flutter", "Firebase"],
+    technologies: ["ESP8266", "C++", "Flutter", "Firebase", "Python"],
     image: "/assets/Projects/mobile/4.jpg",
     github: "https://github.com/bayu3prayitno/airquality_monitoring.git",
     featured: true,
@@ -182,8 +189,8 @@ export const projects = [
 export const activities = [
   {
     id: 1,
-    title: "TECHCOMFEST 2025",
-    type: "Voulenteer",
+    title: "Volunteer TECHCOMFEST 2025",
+    type: "Panitia",
     date: "2025",
     description:
       "Menjadi panitia dalam acara tahunan TECHCOMFEST 2025 sebagai Sie Publikasi, Dokumentasi, dan Dekorasi.",
@@ -201,7 +208,7 @@ export const activities = [
     certificate: "/assets/doc/Dev-Python-Django.pdf",
   },
   {
-    id: 3,
+    id: 7,
     title: "Pimpinan Ranting IPNU Tragung",
     type: "Organisasi",
     date: "2020-2022",
@@ -219,6 +226,26 @@ export const activities = [
     description:
       "Merupakan publikasi jurnal ilmiah tentang sistem monitoring kualitas udara berbasis IoT.",
     image: "/assets/kegiatan/jurnal.png",
+    certificate: "https://doi.org/10.56670/jsrd.v6i2.790",
+  },
+  {
+    id: 3,
+    title: " Intro to Software Engineering | RevoU",
+    type: "Training",
+    date: "2025",
+    description:
+      "Mengikuti pelatihan online Intro to Software Engineering yang diselenggarakan oleh RevoU.",
+    image: "/assets/kegiatan/revou.png",
+    certificate: "/assets/doc/revou.pdf",
+  },
+   {
+    id: 5,
+    title: "Volly Ball Turnament IPNU IPPNU Cup 2022",
+    type: "Panitia",
+    date: "2022",
+    description:
+      "Menjadi panitia dalam acara tahunan Volly Ball Turnament IPNU IPPNU Cup 2022 tingkat kabupaten Batang.",
+    image: "/assets/kegiatan/voli.jpg",
     certificate: null,
   },
 ];

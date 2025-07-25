@@ -15,13 +15,13 @@ const Activities = () => {
 
   const getTypeIcon = (type) => {
     switch (type.toLowerCase()) {
-      case 'competition':
+      case 'JOURNAL PUBLICATION':
         return Trophy;
       case 'training':
         return BookOpen;
-      case 'organization':
+      case 'Organisasi':
         return Users;
-      case 'seminar':
+      case 'Panitia':
         return Calendar;
       default:
         return Award;
@@ -30,13 +30,13 @@ const Activities = () => {
 
   const getTypeColor = (type) => {
     switch (type.toLowerCase()) {
-      case 'competition':
+      case 'JOURNAL PUBLICATION':
         return 'from-yellow-500 to-orange-500';
       case 'training':
         return 'from-blue-500 to-indigo-500';
-      case 'organization':
+      case 'Organisasi':
         return 'from-green-500 to-emerald-500';
-      case 'seminar':
+      case 'Panitia':
         return 'from-purple-500 to-pink-500';
       default:
         return 'from-gray-500 to-gray-600';
