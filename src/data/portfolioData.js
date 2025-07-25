@@ -8,7 +8,7 @@ export const personalData = {
   bio: "Mahasiswa Teknologi Rekayasa Komputer Politeknik Negeri Semarang dengan minat di bidang Pengembangan Perangkat Lunak, Jaringan, dan Sistem Tertanam. Antusias terhadap teknologi IoT dan AI, serta siap menghadapi tantangan dan proyek inovatif di dunia nyata.",
   motto: "Belajar tanpa henti, berkembang tanpa batas.",
   image: "/assets/profile/2.jpg", // Placeholder
-  resume: "/CV_ATS.pdf",
+  resume: "/assets/doc/CV_ats.pdf",
 };
 
 export const socialLinks = {
