@@ -7,7 +7,7 @@ export const personalData = {
   phone: "+62 857 2504 0030",
   bio: "Mahasiswa Teknologi Rekayasa Komputer Politeknik Negeri Semarang dengan minat di bidang Pengembangan Perangkat Lunak, Jaringan, dan Sistem Tertanam. Antusias terhadap teknologi IoT dan AI, serta siap menghadapi tantangan dan proyek inovatif di dunia nyata.",
   motto: "Belajar tanpa henti, berkembang tanpa batas.",
-  image: "/assets/profile/pp.jpg", // Placeholder
+  image: "/assets/profile/2.jpg", // Placeholder
   resume: "/CV_ATS.pdf",
 };
 
@@ -131,10 +131,11 @@ export const projects = [
   {
     id: 1,
     title: "Psikotes Online",
-    type : "web",
+    type: "web",
     description:
       "Berkontribusi dalam pengembangan halaman web yang dinamis, terstruktur dengan baik, dan responsif menggunakan HTML, CSS, dan JavaScript.",
-    longDescription: "Platform psikotes online yang komprehensif dengan berbagai jenis tes psikologi untuk evaluasi kemampuan kognitif, kepribadian, dan potensi kandidat. Sistem ini dilengkapi dengan dashboard admin untuk mengelola soal, peserta, dan hasil tes secara real-time. Fitur utama meliputi timer otomatis, randomisasi soal, laporan hasil detail, dan export data ke berbagai format.",
+    longDescription:
+      "Platform psikotes online yang komprehensif dengan berbagai jenis tes psikologi untuk evaluasi kemampuan kognitif, kepribadian, dan potensi kandidat. Sistem ini dilengkapi dengan dashboard admin untuk mengelola soal, peserta, dan hasil tes secara real-time. Fitur utama meliputi timer otomatis, randomisasi soal, laporan hasil detail, dan export data ke berbagai format.",
     technologies: ["Laravel", "html", "css", "javascript", "filament"],
     features: [
       "Dashboard admin untuk manajemen tes",
@@ -142,23 +143,25 @@ export const projects = [
       "Randomisasi soal untuk mencegah kecurangan",
       "Laporan hasil yang detail dan terstruktur",
       "Export hasil ke PDF dan Excel",
-      "Responsive design untuk berbagai device"
+      "Responsive design untuk berbagai device",
     ],
     challenges: [
       "Implementasi timer yang akurat dan sinkron",
       "Optimasi query database untuk performa yang baik",
-      "Keamanan data peserta dan hasil tes"
+      "Keamanan data peserta dan hasil tes",
     ],
     achievements: [
       "Meningkatkan efisiensi proses rekrutmen hingga 60%",
       "Mendukung concurrent users hingga 500 peserta",
-      "Interface yang user-friendly dengan UX score 4.8/5"
+      "Interface yang user-friendly dengan UX score 4.8/5",
     ],
     image: "/assets/Projects/pbl/1.png",
     gallery: [
       "/assets/Projects/pbl/1.png",
       "/assets/Projects/pbl/2.png",
-      "/assets/Projects/pbl/3.png"
+      "/assets/Projects/pbl/3.png",
+      "/assets/Projects/pbl/4.png",
+      "/assets/Projects/pbl/5.png",
     ],
     github: "https://github.com/Farhnzzz/pbl-psikotes.git",
     demo: null,
@@ -171,10 +174,11 @@ export const projects = [
   {
     id: 2,
     title: "Futsal field booking system",
-    type : "mobile",
+    type: "mobile",
     description:
       "Merancang dan mengembangkan aplikasi menggunakan Flutter yang terintegrasi dengan Firebase sebagai basis data backend.",
-    longDescription: "Aplikasi mobile comprehensive untuk booking lapangan futsal yang memungkinkan pengguna melakukan reservasi secara real-time, melihat jadwal tersedia, dan melakukan pembayaran digital. Sistem ini juga dilengkapi dengan panel admin untuk mengelola lapangan, jadwal, dan transaksi dengan dashboard analytics yang detail.",
+    longDescription:
+      "Aplikasi mobile comprehensive untuk booking lapangan futsal yang memungkinkan pengguna melakukan reservasi secara real-time, melihat jadwal tersedia, dan melakukan pembayaran digital. Sistem ini juga dilengkapi dengan panel admin untuk mengelola lapangan, jadwal, dan transaksi dengan dashboard analytics yang detail.",
     technologies: ["Flutter", "Firebase", "Dart"],
     features: [
       "Real-time booking system dengan notifikasi push",
@@ -183,23 +187,23 @@ export const projects = [
       "User profile management dan history booking",
       "Admin panel untuk mengelola lapangan dan jadwal",
       "Rating dan review system untuk lapangan",
-      "QR Code untuk check-in otomatis"
+      "QR Code untuk check-in otomatis",
     ],
     challenges: [
       "Sinkronisasi real-time untuk mencegah double booking",
       "Optimasi performa aplikasi mobile",
-      "Integrasi payment gateway yang secure"
+      "Integrasi payment gateway yang secure",
     ],
     achievements: [
       "Aplikasi berhasil digunakan oleh 500+ pengguna aktif",
       "Tingkat kepuasan pengguna 4.7/5 stars",
-      "Mengurangi waktu booking manual hingga 80%"
+      "Mengurangi waktu booking manual hingga 80%",
     ],
     image: "/assets/Projects/mobile/1.png",
     gallery: [
-      "/assets/Projects/mobile/1.png",
-      "/assets/Projects/mobile/1-2.png",
-      "/assets/Projects/mobile/1-3.png"
+      "/assets/Projects/mobile/1a.png",
+      "/assets/Projects/mobile/1b.png",
+      "/assets/Projects/mobile/1-3.png",
     ],
     github: "https://github.com/bayu3prayitno/flutter_booking_app-1.git",
     demo: null,
@@ -212,10 +216,11 @@ export const projects = [
   {
     id: 3,
     title: "Solar System AR Application",
-    type : "Mobile, Game",
+    type: "Mobile, Game",
     description:
       "Aplikasi edukasi berbasis AR yang menawarkan cara belajar tentang tata surya secara imersif dan interaktif.",
-    longDescription: "Aplikasi edukasi inovatif yang menggunakan teknologi Augmented Reality untuk memberikan pengalaman pembelajaran interaktif tentang sistem tata surya. Pengguna dapat menjelajahi planet-planet dalam 3D, melihat informasi detail, dan berinteraksi dengan objek celestial secara real-time menggunakan smartphone atau tablet.",
+    longDescription:
+      "Aplikasi edukasi inovatif yang menggunakan teknologi Augmented Reality untuk memberikan pengalaman pembelajaran interaktif tentang sistem tata surya. Pengguna dapat menjelajahi planet-planet dalam 3D, melihat informasi detail, dan berinteraksi dengan objek celestial secara real-time menggunakan smartphone atau tablet.",
     technologies: ["Unity", "C#", "AR Foundation"],
     features: [
       "3D visualization planet-planet dengan detail tinggi",
@@ -224,25 +229,26 @@ export const projects = [
       "Interactive quiz dan mini games",
       "Zoom dan rotate functionality untuk setiap planet",
       "Informasi factual tentang setiap celestial body",
-      "Multi-platform support (Android & iOS)"
+      "Multi-platform support (Android & iOS)",
     ],
     challenges: [
       "Optimasi 3D models untuk performa mobile yang baik",
       "AR tracking accuracy dalam berbagai kondisi lighting",
-      "Balancing educational content dengan entertainment value"
+      "Balancing educational content dengan entertainment value",
     ],
     achievements: [
       "Digunakan oleh 50+ sekolah sebagai media pembelajaran",
       "Rating 4.6/5 di app store dengan 1000+ downloads",
-      "Meningkatkan engagement siswa dalam pembelajaran astronomi hingga 75%"
+      "Meningkatkan engagement siswa dalam pembelajaran astronomi hingga 75%",
     ],
     image: "/assets/Projects/mobile/2.png",
     gallery: [
       "/assets/Projects/mobile/2.png",
       "/assets/Projects/mobile/2-2.png",
-      "/assets/Projects/mobile/2-3.png"
+      "/assets/Projects/mobile/2-3.png",
     ],
-    github: "https://drive.google.com/file/d/1ZQBZBwXx3HdBY06S-HpBTiwDrcD-VkVd/view?usp=drive_link",
+    github:
+      "https://drive.google.com/file/d/1ZQBZBwXx3HdBY06S-HpBTiwDrcD-VkVd/view?usp=drive_link",
     demo: "https://drive.google.com/file/d/1ZQBZBwXx3HdBY06S-HpBTiwDrcD-VkVd/view?usp=drive_link",
     duration: "6 bulan",
     team: "3 orang",
@@ -253,10 +259,11 @@ export const projects = [
   {
     id: 4,
     title: "Game Adventure Pangeran Cedric",
-    type : "Game",
+    type: "Game",
     description:
       "Game PC yang menggabungkan elemen petualangan dan pemecahan teka-teki untuk menghadirkan pengalaman bermain yang menarik, Berkontribusi dalam pengembangan level 3 pada game, termasuk desain tantangan, alur permainan, dan penyesuaian tingkat kesulitan.",
-    longDescription: "Game adventure 2D yang mengisahkan petualangan Pangeran Cedric dalam menyelamatkan kerajaannya. Game ini menggabungkan elemen platformer, puzzle-solving, dan story-driven gameplay dengan grafis pixel art yang menarik. Sebagai kontributor utama untuk level 3, saya bertanggung jawab atas level design, enemy AI, dan balancing gameplay.",
+    longDescription:
+      "Game adventure 2D yang mengisahkan petualangan Pangeran Cedric dalam menyelamatkan kerajaannya. Game ini menggabungkan elemen platformer, puzzle-solving, dan story-driven gameplay dengan grafis pixel art yang menarik. Sebagai kontributor utama untuk level 3, saya bertanggung jawab atas level design, enemy AI, dan balancing gameplay.",
     technologies: ["Unity", "C#", "Unity Asset Store"],
     features: [
       "Story-driven gameplay dengan cutscenes interaktif",
@@ -266,24 +273,24 @@ export const projects = [
       "Enemy AI dengan behavior patterns yang beragam",
       "Power-ups dan collectibles system",
       "Save/Load game progress",
-      "Soundtrack dan sound effects yang immersive"
+      "Soundtrack dan sound effects yang immersive",
     ],
     challenges: [
       "Balancing difficulty curve untuk level 3",
       "Optimasi performance untuk smooth gameplay",
       "Design puzzle yang challenging tapi fair",
-      "Integration dengan existing game systems"
+      "Integration dengan existing game systems",
     ],
     achievements: [
       "Level 3 menjadi level favorit berdasarkan player feedback",
       "Tingkat completion rate 85% untuk level 3",
-      "Mendapat appreciation dari team untuk creative level design"
+      "Mendapat appreciation dari team untuk creative level design",
     ],
     image: "/assets/Projects/mobile/3.png",
     gallery: [
       "/assets/Projects/mobile/3.png",
       "/assets/Projects/mobile/3-2.png",
-      "/assets/Projects/mobile/3-3.png"
+      "/assets/Projects/mobile/3-3.png",
     ],
     github: "https://github.com/username/weather-dashboard",
     demo: null,
@@ -296,10 +303,11 @@ export const projects = [
   {
     id: 5,
     title: "Air Quality Monitoring System",
-    type : "IoT, Mobile",
+    type: "IoT, Mobile",
     description:
       "Pengembangan sistem pemantauan kualitas udara dalam ruangan berbasis IoT menggunakan sensor MQ135 dan DHT11, Berkontribusi dalam perancangan alat dan pembuatan tampilan dashboard untuk memantau kualitas udara secara real-time.",
-    longDescription: "Sistem monitoring kualitas udara terintegrasi yang menggabungkan hardware IoT dengan aplikasi mobile untuk monitoring real-time. Sistem ini menggunakan ESP8266 sebagai microcontroller utama dengan sensor MQ135 untuk gas berbahaya dan DHT11 untuk suhu/kelembaban. Data dikirim ke Firebase dan ditampilkan melalui dashboard mobile yang user-friendly.",
+    longDescription:
+      "Sistem monitoring kualitas udara terintegrasi yang menggabungkan hardware IoT dengan aplikasi mobile untuk monitoring real-time. Sistem ini menggunakan ESP8266 sebagai microcontroller utama dengan sensor MQ135 untuk gas berbahaya dan DHT11 untuk suhu/kelembaban. Data dikirim ke Firebase dan ditampilkan melalui dashboard mobile yang user-friendly.",
     technologies: ["ESP8266", "C++", "Flutter", "Firebase", "Python"],
     features: [
       "Real-time monitoring kualitas udara dengan sensor MQ135",
@@ -310,25 +318,25 @@ export const projects = [
       "Alert system untuk kualitas udara berbahaya",
       "Historical data analysis dan trending",
       "Export data ke CSV untuk analisis lanjutan",
-      "Multi-device monitoring dari satu dashboard"
+      "Multi-device monitoring dari satu dashboard",
     ],
     challenges: [
       "Kalibrasi sensor untuk akurasi pembacaan yang optimal",
       "Optimasi power consumption untuk long-term deployment",
       "Handling network connectivity issues",
-      "Real-time data synchronization antara hardware dan app"
+      "Real-time data synchronization antara hardware dan app",
     ],
     achievements: [
       "Sistem berhasil deployed di 10+ lokasi untuk testing",
       "Akurasi sensor mencapai 95% dibanding alat professional",
       "Mobile app mendapat rating 4.5/5 dari beta testers",
-      "Berhasil detect dan alert 100% kejadian polusi udara berbahaya"
+      "Berhasil detect dan alert 100% kejadian polusi udara berbahaya",
     ],
     image: "/assets/Projects/mobile/4.jpg",
     gallery: [
       "/assets/Projects/mobile/4.jpg",
       "/assets/Projects/mobile/4-2.jpg",
-      "/assets/Projects/mobile/4-3.jpg"
+      "/assets/Projects/mobile/4-3.jpg",
     ],
     github: "https://github.com/bayu3prayitno/airquality_monitoring.git",
     demo: null,
@@ -344,7 +352,8 @@ export const projects = [
     type: "UI/UX Design",
     description:
       "Melakukan desain UI/UX menggunakan Figma untuk menciptakan antarmuka yang intuitif, estetis, dan user-friendly.",
-    longDescription: "Proyek desain UI/UX komprehensif untuk company profile Chanael, sebuah brand yang bergerak di bidang chocolate dan pudding. Desain ini fokus pada creating brand identity yang kuat, user experience yang smooth, dan visual design yang appetizing untuk meningkatkan brand awareness dan sales conversion.",
+    longDescription:
+      "Proyek desain UI/UX komprehensif untuk company profile Chanael, sebuah brand yang bergerak di bidang chocolate dan pudding. Desain ini fokus pada creating brand identity yang kuat, user experience yang smooth, dan visual design yang appetizing untuk meningkatkan brand awareness dan sales conversion.",
     technologies: ["Figma", "UI/UX Design"],
     features: [
       "Modern dan responsive web design",
@@ -355,27 +364,28 @@ export const projects = [
       "Mobile-first design approach",
       "Contact dan ordering system integration",
       "SEO-friendly layout structure",
-      "Accessibility compliance (WCAG guidelines)"
+      "Accessibility compliance (WCAG guidelines)",
     ],
     challenges: [
       "Balancing aesthetic appeal dengan functionality",
       "Creating appetite-inducing visual design",
       "Ensuring cross-device compatibility",
-      "Optimizing user flow untuk conversion"
+      "Optimizing user flow untuk conversion",
     ],
     achievements: [
       "Design approved dengan minimal revisions",
       "Meningkatkan brand recognition score hingga 40%",
       "User testing menunjukkan 90% positive feedback",
-      "Design system yang dapat digunakan untuk future expansion"
+      "Design system yang dapat digunakan untuk future expansion",
     ],
     image: "/assets/Projects/mobile/5.png",
     gallery: [
       "/assets/Projects/mobile/5.png",
       "/assets/Projects/mobile/5-2.png",
-      "/assets/Projects/mobile/5-3.png"
+      "/assets/Projects/mobile/5-3.png",
     ],
-    github: "https://www.figma.com/design/SX6Yda2HrEQNDhNvBgn6rh/Cloud-Pudding?node-id=31-397&t=k6zEOAB6WpkeHBOm-1",
+    github:
+      "https://www.figma.com/design/SX6Yda2HrEQNDhNvBgn6rh/Cloud-Pudding?node-id=31-397&t=k6zEOAB6WpkeHBOm-1",
     demo: "https://www.figma.com/design/SX6Yda2HrEQNDhNvBgn6rh/Cloud-Pudding?node-id=31-397&t=k6zEOAB6WpkeHBOm-1",
     duration: "2 bulan",
     team: "1 orang",
