@@ -41,26 +41,22 @@ const Education = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="relative"
+            className="relative max-w-4xl mx-auto"
           >
             {/* Timeline Line */}
-            <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-primary-500 to-blue-600"></div>
+            <div className="absolute left-8 top-0 h-full w-0.5 bg-gradient-to-b from-primary-500 to-blue-600"></div>
 
             {education.map((edu, index) => (
               <motion.div
                 key={edu.id}
                 variants={itemVariants}
-                className={`relative flex items-center mb-12 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                className="relative flex items-start mb-12"
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary-500 border-4 border-white dark:border-dark-900 rounded-full z-10"></div>
+                <div className="absolute left-6 top-8 w-4 h-4 bg-primary-500 border-4 border-white dark:border-dark-900 rounded-full z-10"></div>
 
                 {/* Content Card */}
-                <div className={`w-full md:w-1/2 ml-16 md:ml-0 ${
-                  index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
-                }`}>
+                <div className="w-full ml-16">
                   <div className="card p-8 hover:shadow-xl transition-shadow duration-300">
                     {/* Header */}
                     <div className="flex items-start justify-between mb-4">
@@ -78,7 +74,7 @@ const Education = () => {
                       {edu.IPK && (
                         <div className="text-right">
                           <span className="text-sm text-gray-500 dark:text-gray-400">IPK</span>
-                          <p className="text-lg font-semibold text-gray-200 dark:text-white">
+                          <p className="text-lg font-semibold text-gray-900 dark:text-white">
                             {edu.IPK}
                           </p>
                         </div>
