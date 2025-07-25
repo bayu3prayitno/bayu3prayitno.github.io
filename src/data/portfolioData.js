@@ -1,7 +1,7 @@
 // Data portfolio berdasarkan CV
 export const personalData = {
   name: "Bayu Tri Prayitno", // Akan diupdate berdasarkan CV
-  title: "Mahasiswa Teknologi Rekayasa Komputer", // Akan diupdate berdasarkan CV
+  title: "Polines Student", // Akan diupdate berdasarkan CV
   location: "Indonesia",
   email: "treeprayitno12@gmail.com",
   phone: "+62 857 2504 0030",
@@ -17,6 +17,16 @@ export const socialLinks = {
   whatsapp: "https://wa.me/6285725040030",
   email: "mailto:treeprayitno12@gmail.com",
 };
+
+export const jobTitles = [
+  "Software Developer",
+  "Frontend Developer", 
+  "Backend Developer",
+  "IoT Developer",
+  "Mobile Developer",
+  "Full Stack Developer",
+  "Web Developer"
+];
 
 export const skills = {
   technical: [
