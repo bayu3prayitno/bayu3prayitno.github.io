@@ -54,13 +54,14 @@ export const education = [
     location: "Semarang, Jawa Tengah",
     image: "/assets/profile/pp.jpg", // placeholder, bisa diganti dengan foto kampus
     color: "from-blue-500 to-blue-600",
-    description: "Fokus pada pengembangan teknologi komputer, sistem tertanam, dan rekayasa perangkat lunak. Mempelajari pemrograman, jaringan komputer, IoT, dan teknologi terkini.",
+    description:
+      "Fokus pada pengembangan teknologi komputer, sistem tertanam, dan rekayasa perangkat lunak. Mempelajari pemrograman, jaringan komputer, IoT, dan teknologi terkini.",
     achievements: [
       "IPK 3.74 dari 4.00",
       "Aktif dalam organisasi dan kegiatan kampus",
       "Mengembangkan berbagai project teknologi",
-      "Magang di perusahaan teknologi"
-    ]
+      "Magang di perusahaan teknologi",
+    ],
   },
   {
     id: 2,
@@ -69,15 +70,16 @@ export const education = [
     period: "2019 - 2022",
     gpa: "-",
     location: "Batang, Jawa Tengah",
-    image: "/assets/profile/pp.jpg", // placeholder, bisa diganti dengan foto sekolah
+    image:
+      "https://smkn1batang.sch.id/wp-content/uploads/2023/01/DJI_0030-scaled.jpg", // placeholder, bisa diganti dengan foto sekolah
     color: "from-green-500 to-green-600",
-    description: "Mempelajari dasar-dasar teknik komputer, jaringan, dan sistem operasi. Mendapatkan fondasi yang kuat dalam teknologi informasi dan komunikasi.",
+    description:
+      "Mempelajari dasar-dasar teknik komputer, jaringan, dan sistem operasi. Mendapatkan fondasi yang kuat dalam teknologi informasi dan komunikasi.",
     achievements: [
-      "Lulus dengan nilai memuaskan",
-      "Aktif dalam kegiatan ekstrakurikuler",
-      "Mengikuti berbagai kompetisi teknologi",
-      "Sertifikasi kompetensi TKJ"
-    ]
+      "Aktif dalam organisasi Kepramukaan",
+      "Anggota aktif Palang Merah Remaja",
+      "Membuat project runing text menggunakan esp8266, yang digunakan untuk kafe sekolah",
+    ],
   },
 ];
 
@@ -87,29 +89,29 @@ export const courses = [
     provider: "Udemy",
     year: "2023",
     duration: "40 hours",
-    skills: ["Flutter", "Dart", "Firebase", "Mobile UI/UX"]
+    skills: ["Flutter", "Dart", "Firebase", "Mobile UI/UX"],
   },
   {
     title: "Web Development with Laravel",
     provider: "Online Course",
     year: "2023",
     duration: "60 hours",
-    skills: ["Laravel", "PHP", "MySQL", "MVC Pattern"]
+    skills: ["Laravel", "PHP", "MySQL", "MVC Pattern"],
   },
   {
     title: "JavaScript Programming",
     provider: "FreeCodeCamp",
     year: "2022",
     duration: "50 hours",
-    skills: ["JavaScript", "ES6+", "DOM Manipulation", "APIs"]
+    skills: ["JavaScript", "ES6+", "DOM Manipulation", "APIs"],
   },
   {
     title: "Python for Beginners",
     provider: "Coursera",
     year: "2022",
     duration: "30 hours",
-    skills: ["Python", "Data Structures", "Algorithms", "OOP"]
-  }
+    skills: ["Python", "Data Structures", "Algorithms", "OOP"],
+  },
 ];
 
 export const projects = [
