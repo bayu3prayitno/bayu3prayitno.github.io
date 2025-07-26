@@ -132,7 +132,7 @@ const Profile = () => {
             <motion.div variants={itemVariants} className="space-y-8">
               <div className="card p-8">
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-                  My Story
+                  My Journey
                 </h3>
 
                 <div className="prose dark:prose-invert max-w-none">
