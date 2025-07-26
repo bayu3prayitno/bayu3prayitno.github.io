@@ -35,7 +35,18 @@ const Contact = () => {
       
       // Check if all required environment variables are set
       if (!serviceId || !templateId || !publicKey) {
-        throw new Error('EmailJS configuration is missing. Please check environment variables.');
+        // Fallback: Open email client with pre-filled data
+        const subject = encodeURIComponent(formData.subject);
+        const body = encodeURIComponent(
+          `Hi Bayu,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\n---\nSent from your portfolio website`
+        );
+        const mailtoLink = `mailto:treeprayitno12@gmail.com?subject=${subject}&body=${body}`;
+        
+        window.open(mailtoLink, '_blank');
+        
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        return;
       }
       
       // Template parameters yang akan dikirim ke email
@@ -62,7 +73,17 @@ const Contact = () => {
       
     } catch (error) {
       console.error('Failed to send email:', error);
-      setSubmitStatus('error');
+      
+      // Fallback jika EmailJS gagal: Open email client
+      const subject = encodeURIComponent(formData.subject);
+      const body = encodeURIComponent(
+        `Hi Bayu,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\n---\nSent from your portfolio website`
+      );
+      const mailtoLink = `mailto:treeprayitno12@gmail.com?subject=${subject}&body=${body}`;
+      
+      window.open(mailtoLink, '_blank');
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } finally {
       setIsSubmitting(false);
       
@@ -266,7 +287,7 @@ const Contact = () => {
                     )}
                     <p className="font-medium">
                       {submitStatus === 'success' 
-                        ? 'Message sent successfully! I\'ll get back to you soon.' 
+                        ? 'Message sent successfully! Your email client may have opened to complete the sending process.' 
                         : 'Failed to send message. Please try again or contact directly via email.'}
                     </p>
                   </div>
