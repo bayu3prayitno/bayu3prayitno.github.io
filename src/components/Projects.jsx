@@ -43,45 +43,71 @@ const Projects = () => {
   const ProjectCard = ({ project, index }) => (
     <motion.div
       variants={itemVariants}
-      className="card overflow-hidden group cursor-pointer"
+      className="card overflow-hidden group cursor-pointer relative"
       onClick={() => setSelectedProject(project)}
-      whileHover={{ y: -5 }}
+      whileHover={{ 
+        y: -8,
+        rotateY: 5,
+        rotateX: 5,
+      }}
       transition={{ duration: 0.3 }}
+      style={{ transformStyle: 'preserve-3d' }}
     >
+      {/* Glow effect */}
+      <motion.div
+        className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-0 group-hover:opacity-20 blur-sm"
+        initial={{ opacity: 0 }}
+        whileHover={{ opacity: 0.2 }}
+        transition={{ duration: 0.3 }}
+      />
+      
       {/* Project Image */}
       <div className="relative overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-48 object-cover group-hover:scale-125 transition-transform duration-700"
           onError={(e) => {
             e.target.src = `https://via.placeholder.com/400x300/3b82f6/ffffff?text=${encodeURIComponent(project.title)}`;
           }}
         />
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
-          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex space-x-4">
-            <button
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-500 flex items-center justify-center">
+          <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 flex space-x-4">
+            <motion.button
               onClick={(e) => {
                 e.stopPropagation();
                 window.open(project.github, '_blank');
               }}
-              className="p-3 bg-white rounded-full text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+              className="p-3 bg-white rounded-full text-gray-900 hover:bg-gray-100 transition-all duration-200 transform hover:scale-110"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Github size={20} />
-            </button>
+            </motion.button>
           </div>
         </div>
         {project.featured && (
-          <div className="absolute top-4 right-4">
-            <div className="bg-yellow-500 text-white p-2 rounded-full">
+          <motion.div 
+            className="absolute top-4 right-4"
+            animate={{ 
+              rotate: [0, 10, -10, 0],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 2, 
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            <div className="bg-yellow-500 text-white p-2 rounded-full shadow-lg">
               <Star size={16} />
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
 
       {/* Project Content */}
-      <div className="p-6">
+      <div className="p-6 relative z-10">
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary-500 transition-colors duration-200">
           {project.title}
         </h3>
@@ -92,36 +118,45 @@ const Projects = () => {
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.slice(0, 3).map((tech, techIndex) => (
-            <span
+            <motion.span
               key={techIndex}
-              className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-500 text-xs font-medium rounded-full"
+              className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-500 text-xs font-medium rounded-full transition-all duration-200 hover:scale-105"
+              whileHover={{ scale: 1.05, y: -2 }}
             >
               {tech}
-            </span>
+            </motion.span>
           ))}
           {project.technologies.length > 3 && (
-            <span className="px-3 py-1 bg-gray-100 dark:bg-dark-700 text-gray-500 dark:text-gray-400 text-xs font-medium rounded-full">
+            <motion.span 
+              className="px-3 py-1 bg-gray-100 dark:bg-dark-700 text-gray-500 dark:text-gray-400 text-xs font-medium rounded-full"
+              whileHover={{ scale: 1.05, y: -2 }}
+            >
               +{project.technologies.length - 3} more
-            </span>
+            </motion.span>
           )}
         </div>
 
         {/* Actions */}
         <div className="flex items-center justify-between">
-          <button className="flex items-center space-x-2 text-primary-500 hover:text-primary-600 transition-colors duration-200">
+          <motion.button 
+            className="flex items-center space-x-2 text-primary-500 hover:text-primary-600 transition-colors duration-200"
+            whileHover={{ x: 5 }}
+          >
             <Eye size={16} />
             <span className="text-sm font-medium">View Details</span>
-          </button>
+          </motion.button>
           <div className="flex space-x-2">
-            <a
+            <motion.a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-200"
+              className="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 transition-all duration-200 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Github size={16} />
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>

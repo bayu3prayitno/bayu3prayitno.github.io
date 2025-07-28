@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Code, Lightbulb, Filter } from "lucide-react";
 import { motion } from "framer-motion";
+import MagneticButton from "./MagneticButton";
 import { skills } from "../data/portfolioData";
 
 const Skills = () => {
@@ -61,17 +62,52 @@ const Skills = () => {
     return (
       <motion.div
         variants={itemVariants}
-        className={`bg-gradient-to-r ${colorClass} text-white px-4 py-3 rounded-xl text-center font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform cursor-pointer group relative overflow-hidden`}
+        className={`bg-gradient-to-r ${colorClass} text-white px-4 py-3 rounded-xl text-center font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 transform cursor-pointer group relative overflow-hidden`}
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.98 }}
+        initial={{ rotateY: 0 }}
+        whileHover={{ rotateY: 10 }}
       >
+        {/* Shine effect */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+          initial={{ x: '-100%' }}
+          whileHover={{ x: '100%' }}
+          transition={{ duration: 0.6 }}
+        />
         <div className="relative z-10">
           <div className="font-semibold text-sm mb-1">{skill.name}</div>
           <div className="text-xs opacity-80 group-hover:opacity-100 transition-opacity">
             {skill.category}
           </div>
         </div>
-        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        {/* Particle effect on hover */}
+        <motion.div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100"
+          initial={{ scale: 0 }}
+          whileHover={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          {[...Array(3)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{
+                top: `${20 + i * 20}%`,
+                left: `${20 + i * 30}%`,
+              }}
+              animate={{
+                scale: [0, 1, 0],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration: 1,
+                repeat: Infinity,
+                delay: i * 0.2,
+              }}
+            />
+          ))}
+        </motion.div>
       </motion.div>
     );
   };
@@ -79,8 +115,20 @@ const Skills = () => {
   const SoftSkillBadge = ({ skill, index }) => (
     <motion.div
       variants={itemVariants}
-      className="bg-gradient-to-r from-primary-500 to-blue-600 text-white px-6 py-3 rounded-full text-center font-medium shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform"
+      className="bg-gradient-to-r from-primary-500 to-blue-600 text-white px-6 py-3 rounded-full text-center font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 transform cursor-pointer group relative overflow-hidden"
+      whileHover={{ 
+        y: -3,
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+      }}
+      whileTap={{ scale: 0.95 }}
     >
+      {/* Ripple effect */}
+      <motion.div
+        className="absolute inset-0 bg-white rounded-full"
+        initial={{ scale: 0, opacity: 0.3 }}
+        whileHover={{ scale: 1, opacity: 0 }}
+        transition={{ duration: 0.4 }}
+      />
       {skill}
     </motion.div>
   );
@@ -139,17 +187,17 @@ const Skills = () => {
                   <span className="font-medium">Filter by category:</span>
                 </div>
                 {categories.map((category) => (
-                  <button
+                  <MagneticButton
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
                       selectedCategory === category
                         ? "bg-primary-500 text-white"
                         : "bg-white dark:bg-dark-900 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/20 border border-gray-200 dark:border-dark-700"
                     }`}
                   >
                     {category.charAt(0).toUpperCase() + category.slice(1)}
-                  </button>
+                  </MagneticButton>
                 ))}
               </div>
 

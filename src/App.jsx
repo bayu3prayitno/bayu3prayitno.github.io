@@ -1,5 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
+import FloatingElements from './components/FloatingElements';
+import ParticleBackground from './components/ParticleBackground';
+import ScrollProgressBar from './components/ScrollProgressBar';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Profile from './components/Profile';
@@ -14,6 +17,9 @@ function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-dark-900 transition-colors duration-300">
+        <ScrollProgressBar />
+        <ParticleBackground />
+        <FloatingElements />
         <Navigation />
         <main>
           <Home />

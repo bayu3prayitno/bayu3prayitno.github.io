@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import MagneticButton from './MagneticButton';
 import { personalData, socialLinks } from '../data/portfolioData';
 import emailjs from '@emailjs/browser';
 
@@ -227,16 +228,29 @@ const Contact = () => {
                   {socialMedia.map((social, index) => {
                     const Icon = social.icon;
                     return (
-                      <a
+                      <motion.a
                         key={index}
                         href={social.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`p-4 bg-gray-100 dark:bg-dark-600 rounded-xl text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:shadow-lg`}
+                        className={`p-4 bg-gray-100 dark:bg-dark-600 rounded-xl text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:shadow-lg relative overflow-hidden group`}
                         aria-label={social.label}
+                        whileHover={{ 
+                          scale: 1.15, 
+                          rotate: 5,
+                          y: -5
+                        }}
+                        whileTap={{ scale: 0.95 }}
                       >
+                        {/* Ripple effect */}
+                        <motion.div
+                          className="absolute inset-0 bg-primary-500 rounded-xl"
+                          initial={{ scale: 0, opacity: 0 }}
+                          whileHover={{ scale: 1, opacity: 0.1 }}
+                          transition={{ duration: 0.3 }}
+                        />
                         <Icon className="w-6 h-6" />
-                      </a>
+                      </motion.a>
                     );
                   })}
                 </div>
@@ -248,22 +262,24 @@ const Contact = () => {
 
               {/* Quick Actions */}
               <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <a
+                <MagneticButton
+                  as="a"
                   href={socialLinks.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-2 bg-green-500 text-white p-4 rounded-lg hover:bg-green-600 transition-colors duration-200"
+                  className="flex items-center justify-center space-x-2 bg-green-500 text-white p-4 rounded-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                 >
                   <MessageCircle size={20} />
                   <span className="font-medium">WhatsApp</span>
-                </a>
-                <a
+                </MagneticButton>
+                <MagneticButton
+                  as="a"
                   href={`mailto:${personalData.email}`}
-                  className="flex items-center justify-center space-x-2 bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-colors duration-200"
+                  className="flex items-center justify-center space-x-2 bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                 >
                   <Mail size={20} />
                   <span className="font-medium">Send Email</span>
-                </a>
+                </MagneticButton>
               </motion.div>
             </motion.div>
 
@@ -359,23 +375,41 @@ const Contact = () => {
                     />
                   </div>
                   
-                  <button
+                  <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full btn-primary flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full btn-primary flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
+                    {/* Button shine effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+                      initial={{ x: '-100%' }}
+                      whileHover={{ x: '100%' }}
+                      transition={{ duration: 0.6 }}
+                    />
                     {isSubmitting ? (
                       <>
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <motion.div 
+                          className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        />
                         <span>Sending...</span>
                       </>
                     ) : (
                       <>
-                        <Send size={20} />
+                        <motion.div
+                          whileHover={{ x: 3 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <Send size={20} />
+                        </motion.div>
                         <span>Send Message</span>
                       </>
                     )}
-                  </button>
+                  </motion.button>
                 </form>
               </div>
             </motion.div>
