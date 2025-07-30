@@ -32,32 +32,10 @@ const Home = () => {
     <section id="home" className={`min-h-screen flex items-center pt-16 ${
       isDark ? 'bg-gray-900' : 'bg-gradient-to-br from-blue-50 to-teal-50'
     } relative overflow-hidden`}>
-      {/* Animated Background Elements */}
+      {/* Static Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-r from-teal-400/10 to-cyan-400/10 rounded-full blur-3xl"
-        />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-r from-teal-400/10 to-cyan-400/10 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -172,16 +150,12 @@ const Home = () => {
                 isDark ? 'border-gray-700' : 'border-white'
               } shadow-2xl relative`}
               >
-                {/* Rotating border effect */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 p-1"
-                >
+                {/* Static border effect */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 p-1">
                   <div className={`w-full h-full rounded-full ${
                     isDark ? 'bg-gray-900' : 'bg-white'
                   }`} />
-                </motion.div>
+                </div>
                 <img
                   src={personalData.image}
                   alt="Profile"
@@ -193,44 +167,14 @@ const Home = () => {
                 />
               </motion.div>
               
-              {/* Floating elements around profile */}
-              <motion.div
-                animate={{
-                  y: [-10, 10, -10],
-                  rotate: [0, 360],
-                }}
-                transition={{
-                  y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                  rotate: { duration: 8, repeat: Infinity, ease: "linear" }
-                }}
-                className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full shadow-lg"
-              />
+              {/* Static elements around profile */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full shadow-lg" />
               
-              <motion.div
-                animate={{
-                  y: [10, -10, 10],
-                  rotate: [360, 0],
-                }}
-                transition={{
-                  y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                  rotate: { duration: 6, repeat: Infinity, ease: "linear" }
-                }}
-                className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-green-400 to-blue-500 rounded-full shadow-lg"
-              />
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-green-400 to-blue-500 rounded-full shadow-lg" />
               
-              <motion.div
-                animate={{
-                  x: [-5, 5, -5],
-                  scale: [1, 1.2, 1],
-                }}
-                transition={{
-                  x: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-                  scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-                }}
-                className="absolute top-1/2 -left-6 w-4 h-4 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full shadow-lg"
-              />
+              <div className="absolute top-1/2 -left-6 w-4 h-4 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full shadow-lg" />
               
-              <div className="absolute -inset-8 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full blur-xl opacity-20 animate-pulse"></div>
+              <div className="absolute -inset-8 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full blur-xl opacity-20"></div>
             </div>
           </motion.div>
         </div>
