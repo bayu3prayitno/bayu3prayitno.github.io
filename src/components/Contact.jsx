@@ -1,16 +1,26 @@
-import React, { useState, useRef } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { personalData, socialLinks } from '../data/portfolioData';
-import emailjs from '@emailjs/browser';
+import React, { useState, useRef } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  MessageCircle,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
+import { motion } from "framer-motion";
+import { personalData, socialLinks } from "../data/portfolioData";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const form = useRef();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -18,7 +28,7 @@ const Contact = () => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -26,13 +36,13 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-    
+
     try {
       // EmailJS configuration from environment variables
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-      
+
       // Check if all required environment variables are set
       if (!serviceId || !templateId || !publicKey) {
         // Fallback: Open email client with pre-filled data
@@ -41,24 +51,24 @@ const Contact = () => {
           `Hi Bayu,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\n---\nSent from your portfolio website`
         );
         const mailtoLink = `mailto:treeprayitno12@gmail.com?subject=${subject}&body=${body}`;
-        
-        window.open(mailtoLink, '_blank');
-        
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
+
+        window.open(mailtoLink, "_blank");
+
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
         return;
       }
-      
+
       // Template parameters yang akan dikirim ke email
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_email: 'treeprayitno12@gmail.com',
-        reply_to: formData.email
+        to_email: "treeprayitno12@gmail.com",
+        reply_to: formData.email,
       };
-      
+
       // Kirim email menggunakan EmailJS
       const result = await emailjs.send(
         serviceId,
@@ -66,27 +76,26 @@ const Contact = () => {
         templateParams,
         publicKey
       );
-      
-      console.log('Email sent successfully:', result);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
+
+      console.log("Email sent successfully:", result);
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
-      console.error('Failed to send email:', error);
-      
+      console.error("Failed to send email:", error);
+
       // Fallback jika EmailJS gagal: Open email client
       const subject = encodeURIComponent(formData.subject);
       const body = encodeURIComponent(
         `Hi Bayu,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\n---\nSent from your portfolio website`
       );
       const mailtoLink = `mailto:treeprayitno12@gmail.com?subject=${subject}&body=${body}`;
-      
-      window.open(mailtoLink, '_blank');
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+
+      window.open(mailtoLink, "_blank");
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } finally {
       setIsSubmitting(false);
-      
+
       // Clear status after 5 seconds
       setTimeout(() => {
         setSubmitStatus(null);
@@ -97,46 +106,46 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
+      label: "Email",
       value: personalData.email,
       link: `mailto:${personalData.email}`,
-      color: 'text-blue-500'
+      color: "text-blue-500",
     },
     {
       icon: Phone,
-      label: 'Phone',
+      label: "Phone",
       value: personalData.phone,
       link: `tel:${personalData.phone}`,
-      color: 'text-green-500'
+      color: "text-green-500",
     },
     {
       icon: MapPin,
-      label: 'Location',
+      label: "Location",
       value: personalData.location,
       link: null,
-      color: 'text-red-500'
-    }
+      color: "text-red-500",
+    },
   ];
 
   const socialMedia = [
     {
       icon: Github,
-      label: 'GitHub',
+      label: "GitHub",
       link: socialLinks.github,
-      color: 'hover:text-gray-800 dark:hover:text-white'
+      color: "hover:text-gray-800 dark:hover:text-white",
     },
     {
       icon: Linkedin,
-      label: 'LinkedIn',
+      label: "LinkedIn",
       link: socialLinks.linkedin,
-      color: 'hover:text-blue-600'
+      color: "hover:text-blue-600",
     },
     {
       icon: MessageCircle,
-      label: 'WhatsApp',
+      label: "WhatsApp",
       link: socialLinks.whatsapp,
-      color: 'hover:text-green-500'
-    }
+      color: "hover:text-green-500",
+    },
   ];
 
   const containerVariants = {
@@ -144,9 +153,9 @@ const Contact = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -155,9 +164,9 @@ const Contact = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   return (
@@ -171,8 +180,8 @@ const Contact = () => {
         >
           <h2 className="section-title">Get In Touch</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 text-center mb-16 max-w-3xl mx-auto">
-            I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. 
-            Feel free to reach out through any of the channels below!
+            I'm always interested in new opportunities and collaborations. Feel
+            free to reach out if you'd like to work together!
           </p>
 
           <motion.div
@@ -188,18 +197,24 @@ const Contact = () => {
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
                   Contact Information
                 </h3>
-                
+
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => {
                     const Icon = info.icon;
                     const content = (
                       <div className="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-dark-700 transition-colors duration-200">
-                        <div className={`p-3 bg-gray-100 dark:bg-dark-600 rounded-full ${info.color}`}>
+                        <div
+                          className={`p-3 bg-gray-100 dark:bg-dark-600 rounded-full ${info.color}`}
+                        >
                           <Icon className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-sm text-gray-500 dark:text-gray-400">{info.label}</p>
-                          <p className="text-gray-900 dark:text-white font-medium">{info.value}</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">
+                            {info.label}
+                          </p>
+                          <p className="text-gray-900 dark:text-white font-medium">
+                            {info.value}
+                          </p>
                         </div>
                       </div>
                     );
@@ -209,9 +224,7 @@ const Contact = () => {
                         {content}
                       </a>
                     ) : (
-                      <div key={index}>
-                        {content}
-                      </div>
+                      <div key={index}>{content}</div>
                     );
                   })}
                 </div>
@@ -222,7 +235,7 @@ const Contact = () => {
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
                   Connect With Me
                 </h3>
-                
+
                 <div className="flex space-x-4">
                   {socialMedia.map((social, index) => {
                     const Icon = social.icon;
@@ -240,14 +253,18 @@ const Contact = () => {
                     );
                   })}
                 </div>
-                
+
                 <p className="text-gray-600 dark:text-gray-300 mt-4 text-sm">
-                  Follow me on social media for updates on my latest projects and tech insights.
+                  Follow me on social media for updates on my latest projects
+                  and tech insights.
                 </p>
               </motion.div>
 
               {/* Quick Actions */}
-              <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <motion.div
+                variants={itemVariants}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              >
                 <a
                   href={socialLinks.whatsapp}
                   target="_blank"
@@ -273,22 +290,24 @@ const Contact = () => {
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
                   Send Message
                 </h3>
-                
+
                 {submitStatus && (
-                  <div className={`mb-6 p-4 rounded-lg flex items-center space-x-3 ${
-                    submitStatus === 'success' 
-                      ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400' 
-                      : 'bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400'
-                  }`}>
-                    {submitStatus === 'success' ? (
+                  <div
+                    className={`mb-6 p-4 rounded-lg flex items-center space-x-3 ${
+                      submitStatus === "success"
+                        ? "bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400"
+                        : "bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400"
+                    }`}
+                  >
+                    {submitStatus === "success" ? (
                       <CheckCircle size={20} />
                     ) : (
                       <AlertCircle size={20} />
                     )}
                     <p className="font-medium">
-                      {submitStatus === 'success' 
-                        ? 'Message sent successfully! Your email client may have opened to complete the sending process.' 
-                        : 'Failed to send message. Please try again or contact directly via email.'}
+                      {submitStatus === "success"
+                        ? "Message sent successfully! Your email client may have opened to complete the sending process."
+                        : "Failed to send message. Please try again or contact directly via email."}
                     </p>
                   </div>
                 )}
@@ -296,7 +315,10 @@ const Contact = () => {
                 <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      >
                         Name *
                       </label>
                       <input
@@ -311,7 +333,10 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      >
                         Email *
                       </label>
                       <input
@@ -326,9 +351,12 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
                       Subject *
                     </label>
                     <input
@@ -342,9 +370,12 @@ const Contact = () => {
                       placeholder="What's this about?"
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
                       Message *
                     </label>
                     <textarea
@@ -358,7 +389,7 @@ const Contact = () => {
                       placeholder="Tell me about your project or just say hello!"
                     />
                   </div>
-                  
+
                   <button
                     type="submit"
                     disabled={isSubmitting}

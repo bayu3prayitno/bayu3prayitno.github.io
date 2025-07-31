@@ -2,12 +2,12 @@
 export const personalData = {
   name: "Bayu Tri Prayitno", // Akan diupdate berdasarkan CV
   title: "Polines Student", // Akan diupdate berdasarkan CV
-  location: "Indonesia",
+  location: "Semarang, Indonesia",
   email: "treeprayitno12@gmail.com",
   phone: "+62 857 2504 0030",
   bio: "Mahasiswa Teknologi Rekayasa Komputer Politeknik Negeri Semarang dengan minat di bidang Pengembangan Perangkat Lunak, Jaringan, dan Sistem Tertanam. Antusias terhadap teknologi IoT dan AI, serta siap menghadapi tantangan dan proyek inovatif di dunia nyata.",
   motto: "Belajar tanpa henti, berkembang tanpa batas.",
-  image: "/assets/profile/2.jpg", // Placeholder
+  image: "/assets/profile/pp.jpg", // Placeholder
   resume: "/assets/doc/CV_ats.pdf",
 };
 
@@ -32,7 +32,7 @@ export const skills = {
     { name: "HTML/CSS", category: "Frontend" },
     { name: "Git", category: "Tools" },
     { name: "MySQL", category: "Database" },
-    { name: "Firebase", category: "Backend" },
+    { name: "Firebase", category: "Database" },
     { name: "Flutter", category: "Programming" },
     { name: "IOT", category: "Programming" },
     { name: "Visual Studio Code", category: "Tools" },

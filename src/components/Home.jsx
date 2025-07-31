@@ -50,6 +50,7 @@ const Home = () => {
               <p className={`text-xl md:text-2xl ${
                 isDark ? 'text-gray-300' : 'text-gray-600'
               }`}>
+                I'm a{' '}
                 <span className="inline-block min-w-0 transition-all duration-500 ease-in-out">
                   {jobTitles[currentJobIndex]}
                 </span>
