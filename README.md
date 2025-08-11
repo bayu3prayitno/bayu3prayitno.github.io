@@ -1,4 +1,4 @@
-# SnapFolio - Modern Portfolio Website
+# Modern Portfolio Website
 
 A modern, responsive portfolio website built with React, Tailwind CSS, and Framer Motion. Features a clean design, dark mode toggle, and smooth animations.
 
