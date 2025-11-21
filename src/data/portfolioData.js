@@ -26,7 +26,7 @@ export const jobTitles = [
 
 export const skills = {
   technical: [
-    { name: "JavaScript", category: "Programming" },
+    { name: "JavaScript", category: "Frontend" },
     { name: "Node.js", category: "Backend" },
     { name: "Python", category: "Programming" },
     { name: "HTML/CSS", category: "Frontend" },
@@ -37,6 +37,7 @@ export const skills = {
     { name: "IOT", category: "Programming" },
     { name: "Visual Studio Code", category: "Tools" },
     { name: "Laravel", category: "Backend" },
+    {name: "React js", category: "Frontend"},
   ],
   soft: [
     "Problem Solving",
@@ -334,45 +335,89 @@ export const projects = [
   },
   {
     id: 6,
-    title: "Desain UI/UX Company Profile Chanael - Chocolate And Pudding",
-    type: "UI/UX Design",
+    title: "Company Profile CV. Gundara Solusi Bersama",
+    type: "web",
     description:
-      "Melakukan desain UI/UX menggunakan Figma untuk menciptakan antarmuka yang intuitif, estetis, dan user-friendly.",
+      "Membangun Website Company Profile untuk CV. Gundara Solusi Bersama menggunakan framework laravel dengan tampil menarik dan responsif.",
     longDescription:
-      "Proyek desain UI/UX komprehensif untuk company profile Chanael, sebuah brand yang bergerak di bidang chocolate dan pudding. Desain ini fokus pada creating brand identity yang kuat, user experience yang smooth, dan visual design yang appetizing untuk meningkatkan brand awareness dan sales conversion.",
-    technologies: ["Figma", "UI/UX Design"],
+      "Website company profile yang dirancang khusus untuk CV. Gundara Solusi Bersama, menampilkan informasi tentang perusahaan, layanan, portofolio, dan kontak perusahaan. Website ini dibangun menggunakan framework Laravel, memastikan tampilan yang profesional dan responsif di berbagai perangkat.",
+    technologies: ["Laravel", "Alpine.js", "PHP", "MySQL"],
     features: [
-      "Brand identity development dengan color palette yang appetizing",
-      "Interactive prototyping dengan micro-interactions",
-      "Product showcase dengan high-quality imagery",
+      "Responsive di berbagai perangkat (desktop, tablet, mobile)",
+      "Mudah dikembangkan kedepannya",
+      "Tampilan modern dan profesional",
       "User-friendly navigation dan information architecture",
-      "Contact dan ordering system integration",
-      "SEO-friendly layout structure",
-      "Accessibility compliance (WCAG guidelines)",
     ],
     challenges: [
-      "Balancing aesthetic appeal dengan functionality",
-      "Creating appetite-inducing visual design",
-      "Ensuring cross-device compatibility",
-      "Optimizing user flow untuk conversion",
+      "-",
     ],
     achievements: [
-      "Design approved dengan minimal revisions",
-      "Design system yang dapat digunakan untuk future expansion",
+      "Website live dan dapat diakses publik",
+      "tampilan menarik sesuai dengan brand perusahaan",
     ],
-    image: "/assets/Projects/mobile/5.png",
+    image: "/assets/Projects/gundara/1.png",
     gallery: [
-      "/assets/Projects/mobile/5.png",
-      "/assets/Projects/mobile/5a.png",
-      "/assets/Projects/mobile/5b.png",
-      "/assets/Projects/mobile/5c.png",
+      "/assets/Projects/gundara/1.png",
+      "/assets/Projects/gundara/2.png",
+      "/assets/Projects/gundara/3.png",
+      "/assets/Projects/gundara/4.png",
+      "/assets/Projects/gundara/5.png",
+      "/assets/Projects/gundara/6.png",
     ],
     github:
-      "https://www.figma.com/design/SX6Yda2HrEQNDhNvBgn6rh/Cloud-Pudding?node-id=31-397&t=k6zEOAB6WpkeHBOm-1",
-    demo: "https://www.figma.com/design/SX6Yda2HrEQNDhNvBgn6rh/Cloud-Pudding?node-id=31-397&t=k6zEOAB6WpkeHBOm-1",
+      "https://github.com/bayu3prayitno/gundala.git",
+    demo: "https://gundarasolusi.com/",
+    duration: "1 minggu",
+    team: "1 orang",
+    role: "Full Stack Developer",
+    status: "Completed",
+    featured: true,
+  },
+  {
+    id: 7,
+    title: "Website Karang Taruna Desa Batursari - Kemajuan UMKM Lokal",
+    type: "web",
+    description:
+      "Membangun Website Karang Taruna Desa Batursari menggunakan framework laravel dengan tampil menarik dan responsif dengan dilengkapi Content Management System (CMS).",
+    longDescription: `Website ini dikembangkan untuk menjadi solusi digital terpusat bagi Karang Taruna.
+
+Dengan tujuan utama pembuatan website ini adalah untuk :
+Memastikan pengelolaan dan penyebaran informasi terkait kegiatan, kepengurusan, dan berita Karang Taruna dilakukan secara cepat, mudah, dan terintegrasi pada satu platform resmi.
+Menyediakan saluran pemasaran digital yang terpercaya (online marketplace) untuk meningkatkan visibilitas dan skalabilitas produk-produk UMKM binaan lokal.
+Mendorong partisipasi aktif pemuda melalui akses informasi yang transparan dan mendokumentasikan seluruh sejarah serta prestasi Karang Taruna.
+`,
+    technologies: ["Laravel", "JavaScript", "PHP", "MySQL", "CSS"],
+    features: [
+      "Responsive di berbagai perangkat (desktop, tablet, mobile)",
+      "Mudah dikelola dengan CMS untuk update konten",
+      "Tampilan modern dan profesional",
+      "Memiliki fitur e-commerce untuk mendukung UMKM lokal",
+    ],
+    challenges: [
+      "-",
+    ],
+    achievements: [
+      "Website live dan dapat diakses publik",
+      "tampilan menarik sesuai dengan brand perusahaan",
+    ],
+    image: "/assets/Projects/karangtaruna/1.png",
+    gallery: [
+      "/assets/Projects/karangtaruna/1.png",
+      "/assets/Projects/karangtaruna/2.png",
+      "/assets/Projects/karangtaruna/3.png",
+      "/assets/Projects/karangtaruna/4.png",
+      "/assets/Projects/karangtaruna/5.png",
+      "/assets/Projects/karangtaruna/6.png",
+      "/assets/Projects/karangtaruna/7.png",
+      "/assets/Projects/karangtaruna/8.png",
+      "/assets/Projects/karangtaruna/9.png",
+    ],
+    github:
+      "https://github.com/rcirasatti/cms-karangtaruna.git",
+    demo: "https://karangtarunabatursari.com/",
     duration: "2 minggu",
-    team: "3 orang",
-    role: "UI/UX Designer",
+    team: "2 orang",
+    role: "Full Stack Developer",
     status: "Completed",
     featured: true,
   },
